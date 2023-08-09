@@ -1,0 +1,27 @@
+'NEW' ---(request)--->  'CLASS' ---(generates)---> 'OBJECT'
+
+                <----(like)--->
+
+FUNCTION CALL() ---(request) ---> 'FUNCTION' ---(generates) ---> 'OUTPUT'
+
+
+
+# 'New' makes a request to the 'class' to generate 'object or instance'.
+# Thus as many times 'new' is called, it will request the 'class' to generate 'object'.
+# This 'object' is saved in the 'RAM'.
+# Once the 'object' is created 'new' keyword will get the 'objects address' and store that in a 'reference variable'.
+#  
+
+An example: 
+    class A {
+
+        A a1 = new A ();
+    
+    }
+
+
+
+
+
+
+

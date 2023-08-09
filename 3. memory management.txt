@@ -1,0 +1,37 @@
+#Static and Non-Static
+ ->Example:
+    public class A {
+        int x = 1; //non static belongs to object(instance). 
+        static int y = 2; //static belongs to 'common memory' of class. 
+        public static void main(String args[]){
+          A a1 = new A(); //to access non static variable we need to create an object.
+          
+          System.out.println(a1.x); //getting data from object.
+          System.out.println(A.y); //getting data from class. 
+        }
+    }
+
+
+ -> Non Static Variable / Instance variable :
+  - These variable are created inside the 'class' but outside the 'main method' without 'static' keyword. 
+  - Once we create an object non-static variable is loaded into the object.
+  - Non-static variable only belong to object.
+  - Without creating an object we cannot access non-static variable.
+  - Every time we create an object copy of non-static variable is loaded into the object.
+
+
+ -> Static / Class variable:
+  - These variable is created inside the 'class' but outside the 'main method' using 'static' keyword.
+  - Every class has a dedicated memory called 'common memory'.
+  - The static variables are loaded into the 'common memory' of the class.
+  - We access them using the 'class name' --> Ex: A.x 
+  - These variable belong to class. 
+
+
+------------------------------------------------------------------------------------------------
+#Garbage Collector:
+- In java garbage collector does memory management effectively and efficiently by removing unused objects from the memory on regular basis thus avoiding overflow of memory.
+
+
+
+
