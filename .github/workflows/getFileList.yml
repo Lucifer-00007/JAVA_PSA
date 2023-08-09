@@ -22,11 +22,6 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: 3.11.4
-        # Install the necessary modules
-        packages:
-          - json
-          - requests
-
     - name: Get file list
       uses: actions/github-script@v3
       with:
@@ -48,9 +43,14 @@ jobs:
 
           repo_name = "${{ github.repository }}"
           repo_owner = "${{ github.repository_owner }}"
+          # Change the types of the variables to strings
+          repo_name = str(repo_name)
+          repo_owner = str(repo_owner)
           file_list = get_file_list(repo_name, repo_owner)
 
           with open("README.md", "w") as f:
             f.write("This repository contains the following files and folders:\n")
             for file in file_list:
               f.write("* {}\n".format(file))
+              # Use pip to install the necessary modules
+              pip install json requests
