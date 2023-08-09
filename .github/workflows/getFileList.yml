@@ -27,7 +27,7 @@ jobs:
         cat ls -r >> README.md 
         
     - name: Push changes
-      if: github.ref == 'refs/heads/main'
-      uses: ad-m/github-push-action@main
+      if: github.ref == 'refs/heads/master'
+      uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
