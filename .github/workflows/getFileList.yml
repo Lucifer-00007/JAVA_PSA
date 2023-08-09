@@ -1,28 +1,39 @@
-steps:
-- name: Get file list
-  uses: actions/github-script@v3
-  with:
-    script: |
-      import json
-      import requests
+name: Get file list
 
-      def get_file_list(repo_name, repo_owner):
-        url = "https://api.github.com/repos/{}/{}/contents".format(repo_owner, repo_name)
-        headers = {"Authorization": "token YOUR_GITHUB_API_TOKEN"}
-        response = requests.get(url, headers=headers)
-        if response.status_code == 200:
-          file_list = []
-          for file in response.json():
-            file_list.append(file["name"])
-          return file_list
-        else:
-          raise Exception("Error getting file list")
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
-      repo_name = "${{ github.repository }}"
-      repo_owner = "${{ github.repository_owner }}"
-      file_list = get_file_list(repo_name, repo_owner)
+jobs:
+  get-file-list:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get file list
+      uses: actions/github-script@v3
+      with:
+        script: |
+          import json
+          import requests
 
-      with open("README.md", "w") as f:
-        f.write("This repository contains the following files and folders:\n")
-        for file in file_list:
-          f.write("* {}\n".format(file))
+          def get_file_list(repo_name, repo_owner):
+            url = "https://api.github.com/repos/{}/{}/contents".format(repo_owner, repo_name)
+            headers = {"Authorization": "token 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"}
+            response = requests.get(url, headers=headers)
+            if response.status_code == 200:
+              file_list = []
+              for file in response.json():
+                file_list.append(file["name"])
+              return file_list
+            else:
+              raise Exception("Error getting file list")
+
+          repo_name = "${{ github.repository }}"
+          repo_owner = "${{ github.repository_owner }}"
+          file_list = get_file_list(repo_name, repo_owner)
+
+          with open("README.md", "w") as f:
+            f.write("This repository contains the following files and folders:\n")
+            for file in file_list:
+              f.write("* {}\n".format(file))
