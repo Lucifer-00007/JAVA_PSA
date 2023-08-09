@@ -1,58 +1,26 @@
-name: Get file list
+name: Update File List in README
 
 on:
   push:
     branches:
-      - main
-  pull_request:
+      - main  # Adjust this based on your repository's default branch
 
 jobs:
-  get-file-list:
+  update_list:
     runs-on: ubuntu-latest
+    
     steps:
-    - name: Cache Python packages
-      uses: actions/cache@v3
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
-
-    - name: Setup Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: 3.10.11
-
-    - name: Install necessary modules
-      run: pip install requests
-      
-    - name: Get file list
-      uses: actions/github-script@v3
-      with:
-        script: |
-          import json
-          import requests
-
-          def get_file_list(repo_name, repo_owner):
-            url = "https://api.github.com/repos/{}/{}/contents".format(repo_owner, repo_name)
-            headers = {"Authorization": "token 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"}
-            response = requests.get(url, headers=headers)
-            if response.status_code == 200:
-              file_list = []
-              for file in response.json():
-                file_list.append(file["name"])
-              return file_list
-            else:
-              raise Exception("Error getting file list")
-
-          repo_name = "${{ github.repository }}"
-          repo_owner = "${{ github.repository_owner }}"
-          # Change the types of the variables to strings
-          repo_name = str(repo_name)
-          repo_owner = str(repo_owner)
-          file_list = get_file_list(repo_name, repo_owner)
-
-          with open("README.md", "w") as f:
-            f.write("This repository contains the following files and folders:\n")
-            for file in file_list:
-              f.write("* {}\n".format(file))
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+    
+    - name: Generate File List
+      id: file_list
+      run: |
+        echo "### Repository File List" > file_list.txt
+        find . -type f -not -path './.git/*' >> file_list.txt
+        find . -type d -not -path './.git/*' >> file_list.txt
+    
+    - name: Update README
+      run: |
+        echo "## Repository File List" > README.md
+        cat file_list.txt >> README.md
