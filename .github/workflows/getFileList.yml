@@ -2,7 +2,7 @@ name: Update File List in README
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   update_list:
