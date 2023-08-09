@@ -22,6 +22,15 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: 3.11.4
+        # Install the necessary modules
+        packages:
+          - pip
+          - json
+          - requests
+
+    - name: Install necessary modules
+      run: pip install json requests
+      
     - name: Get file list
       uses: actions/github-script@v3
       with:
@@ -52,5 +61,3 @@ jobs:
             f.write("This repository contains the following files and folders:\n")
             for file in file_list:
               f.write("* {}\n".format(file))
-              # Use pip to install the necessary modules
-              pip install json requests
