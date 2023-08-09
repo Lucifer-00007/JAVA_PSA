@@ -22,11 +22,6 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: 3.11.4
-        # Install the necessary modules
-        packages:
-          - pip
-          - json
-          - requests
 
     - name: Install necessary modules
       run: pip install json requests
