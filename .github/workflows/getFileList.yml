@@ -10,6 +10,11 @@ jobs:
   get-file-list:
     runs-on: ubuntu-latest
     steps:
+    - name: Setup Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.10
+
     - name: Get file list
       uses: actions/github-script@v3
       with:
