@@ -34,4 +34,12 @@
 
 
 
-
+------------------------------------------------------------------------------------------------
+#Stack and Heap Memory (refer video 'Core JAVA Session3'):
+- When we run a program automatically a 'stack memory' and a 'heap memory' is allocated in the RAM.
+- The 'program execution flow' is loaded in the 'stack memory' and 'objects' are loaded in the 'heap memory'.
+- The address of all the 'objects' of 'heap' are in the 'stack'.
+- Now when the 'part of a program' is executed completely in the 'stack' that part is automatically removed from 'stack'.
+- So when the 'part of a program' is removed from 'stack' the address of the 'object' is also removed.
+- Thus now the 'object' of the 'heap' whose address is not in the 'stack' becomes 'unused object'.
+- This 'unused object' is removed from 'heap' by the 'garbage collector'.       

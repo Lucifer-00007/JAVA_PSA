@@ -1,0 +1,140 @@
+#The types of varaiables in JAVA are: 
+ - Local variable
+ - Static variable
+ - Non-static variable
+ - Referenced variable
+
+#Note:
+ - Static & Local variable names can be same.
+ - Non-Static & Local variable names can be same.
+ - Non-Static & Static variable names cannot be same.
+
+
+------------------------------------------------------------------------------------------------
+#Local variable:
+ - These variables are created inside the method.
+ - These variables should be used only within the created method. Outside the method it will throw error.
+ - Without initialization local variable cannot be used.    
+
+ - Example:
+    public class A{
+        public static void main(String[] args){
+            int i = 10; //Local variable
+            System.out.println(i); //Local variable 'i' should be used only within this method.
+        }
+
+        public void test(){
+
+        }
+    }   
+
+
+------------------------------------------------------------------------------------------------
+#Static variable:
+ - These variables are created outside method but inside class using static keyword.
+ - They have global access.
+ - It is not mandatory to initialize static variable.If we do not initialize then depending on the data type default value will get stored in it.
+ - We can access static variable in 3 ways:
+    - className.staticVariableName
+    - staticVariableName
+    - referenceVariable.staticVariableName(This is wrong but auto corrected, hence works. Should not be used)
+
+
+ - Example1:
+    public class A{
+        static int x = 10; //static variable, Global access
+
+        public static void main(String[] args){
+            System.out.println(A.x);
+
+            A a1 = new A();
+            a1.test();
+        }
+
+        public void test(){
+            System.out.println(A.x);
+        }
+    }
+
+ - Example2:
+    public class A{
+        static int x; //Since no value is assigned to 'x' so default value of integer ie. 0 is used  
+        
+        public static void main(String args[]){
+            System.out.println(A.x); //0 
+        }
+    }     
+
+ - Example3:
+    public class A{
+        static int x = 10; 
+        public static void main(String args[]){
+            System.out.println(A.x);
+            System.out.println(x);
+            
+            A a1 = new A();
+            System.out.println(a1.x); //Is wrong but auto corrected.
+        }
+    }
+
+
+------------------------------------------------------------------------------------------------
+#Non-Static variable:
+ - These variables are created outside methods but inside class without static keyword.
+ - They are also called as instance variable.
+ - Without creating object(instance) we cannot access non static variables.
+ - if we do not initialize non static variable then depending on data type automatically default value get's stored in it.
+
+ - Example:
+    public class A {
+        int x = 10; //Non-static variable
+
+        public static void main(String args[]){
+            A a1 = new A();
+            System.out.println(a1.x);
+        }
+    }
+
+
+------------------------------------------------------------------------------------------------
+#Reference variable:
+ - Reference variable can store either 'object's address' or 'null' value.
+ - Data type of reference variable is a class name.
+    - Example: A a1 = new A(); //Here 'a1' is reference variable with datatype 'class A'. 
+ - Types of reference variable:
+    - Local reference variable:
+        - These variables are created inside method and should be used only within created method.
+        - Example:
+          - public class A{
+                public static void main(String args[]){
+                    
+                    A a1 = new A(); //local reference variable
+
+                    System.out.println(a1);
+                    a1.test();    
+                }
+                public void test() {
+                    System.out.println(a1); //Error
+                }
+            }  
+    - Static reference variable:
+        - These variables are created inside class but outside method using static keyword.
+        - They have global access.
+        - Example:
+          - public class A{
+                static A a1 = new A(); //Static reference variable
+                public static void main(String args[]){
+                    System.out.println(a1); //correct
+                    a1.test();    
+                }
+                public void test() {
+                    System.out.println(a1); //correct 
+                }
+            }  
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+# Static and Non-static Methods:
+
+#Example:
+public class A{
+    public static void main(String arg[]){ //Static Method
+        A a1 = new A();
+        a1.test(); //Calling the 'non-static method test()' using an instance 'a1'  
+        
+        A.test1(); //Calling the 'static method test1()' using the class 'A'
+    }
+
+    public void test(){ //Non-static Method
+        System.out.println("Testing");
+    }
+
+    public static void test1(){ //Static Method
+        System.out.println(100);
+    } 
+}
