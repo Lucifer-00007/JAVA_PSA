@@ -7,5 +7,4 @@
 - ./README.md
 - ./practice/test1.txt
 - ./practice/test2.txt
-- ./practice/test3.txt
 - ./psa interview questions.pdf
