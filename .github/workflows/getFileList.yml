@@ -16,8 +16,8 @@ jobs:
       id: file_list
       run: |
         echo " " > file_list.txt
-        find . -type f -not -path './.git/*' > file_list.txt
-        find . -type d -not -path './.git/*' > file_list.txt
+        find . -type f -not -path './.git/*' >> file_list.txt
+        find . -type d -not -path './.git/*' >> file_list.txt
     
     - name: Update README
       run: |
