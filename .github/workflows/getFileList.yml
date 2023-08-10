@@ -20,7 +20,7 @@ jobs:
     
     - name: Update README
       run: |
-        echo "## Repository File List" > README.md
+        echo "# Repository File List" > README.md
         cat file_list.txt > README.md
         
     - name: Commit Files
