@@ -3,6 +3,8 @@
 - [./1. plan.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/1.%20plan.txt)
 - [./2. class and new.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/2.%20class%20and%20new.txt)
 - [./3. memory management.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/3.%20memory%20management.txt)
+- [./4. method.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/4.%20method.txt)
+- [./5. types of variables.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/5.%20types%20of%20variables.txt)
 - [./Java All notes.pdf](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/Java%20All%20notes.pdf)
 - [./README.md](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/README.md)
 - [./practice/test1.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/practice/test1.txt)
