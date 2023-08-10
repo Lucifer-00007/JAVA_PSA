@@ -19,7 +19,7 @@ jobs:
         echo "# Repository File List" > README.md
         base_url="https://github.com/Lucifer-00007/JAVA_PSA/blob/main"
         find . -type f -not -path './.git/*' -not -path './.github/*' -exec echo "- {}" \; | sort | while read -r file; do 
-            echo "- [$file]($base_url/${file#-./})" 
+            echo "[$file]($base_url/${file#./})" 
         done >> README.md
         
     - name: Commit Files
