@@ -9,7 +9,6 @@
 ./3. memory management.txt
 ./1. plan.txt
 ./0. keywords.txt
-./file_list.txt
 ./README.md
 .
 ./.git
