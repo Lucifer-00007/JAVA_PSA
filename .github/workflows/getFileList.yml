@@ -16,12 +16,12 @@ jobs:
       id: file_list
       run: |
         echo " " > file_list.txt
+        echo "# Repository File List" > file_list.txt
         find . -type f -not -path './.git/*' >> file_list.txt
         find . -type d -not -path './.git/*' >> file_list.txt
     
     - name: Update README
       run: |
-        echo "# Repository File List" > README.md
         cat file_list.txt > README.md
         
     - name: Commit Files
