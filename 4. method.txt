@@ -17,3 +17,38 @@ public class A{
         System.out.println(100);
     } 
 }
+
+
+-------------------------------------------------------------------------------------------------
+#What is void, return, return value?
+- example1:
+    public class A{
+        public static void main(String arg[]){
+            A a1 = new A();
+            
+            System.out.println(a1.test()); //Error 
+            System.out.println(a1.test1()); //100
+            System.out.println(a1.test2()); //10.6 
+            System.out.println(a1.test3()); //"Testing"
+        }
+
+        public void test(){
+            return 100;  //Error, since void never return any value. 
+        }    
+
+        public int test1(){
+            return 100;  //Correct. 
+        }
+
+        public double test2(){
+            return 10.6; //Correct. 
+        }
+
+        public String test3(){
+            return "Testing"; //Correct.
+        }
+    }  
+
+ - Void:
+    - if a method is 'Void' than that method 'cannot return' any value.
+
