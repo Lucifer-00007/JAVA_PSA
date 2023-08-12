@@ -1,4 +1,4 @@
-#The types of varaiables in JAVA are: 
+#The types of variables in JAVA are: 
  - Local variable
  - Static variable
  - Non-static variable

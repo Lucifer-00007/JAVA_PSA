@@ -49,6 +49,98 @@ public class A{
         }
     }  
 
- - Void:
+- Void:
     - if a method is 'Void' than that method 'cannot return' any value.
+
+- return:
+    - We can use only return keyword inside void Method. 
+    - It is optional to use.
+    - It will return program control back to method calling statement.
+    - Note: If we write anything after 'return' keyword then that line will never run & hence we will get 'unreachable code error'.
+    
+    - Example:
+        public class A {
+            public static void main(String args[]){
+                A a1 = new A();
+                a1.test();            
+            }
+            
+            public void test(){
+                return; //Will return program control back to method calling statement.       
+            }
+        }  
+
+
+- return value:
+    - We can only use "return value" keyword inside a 'non void method'.
+    - It is mandatory to use "return value" keyword inside a 'non void method' or else we will get an error.
+        - Example:
+            public class A {
+                public static void main(String args[]){
+                }
+
+                public int test(){ //Error because "return value" keyword is missing. 
+                }
+            } 
+    
+    - It will return value and program control back to method calling statement.
+    - Note: If we write anything after 'return value' keyword then that line will never run & hence we will get 'unreachable code error'.
+
+
+
+-------------------------------------------------------------------------------------------------
+# method arguments:
+- example1:
+    public class A{
+        public static void main(String args[]){
+            A a1 = new A();
+            a1.test(100);
+        }
+
+        public void test(int x){
+            System.out.println(x);
+        }
+    }
+
+- example2:
+    public class A{
+        public static void main(String args[]){
+            A a1 = new A();
+            a1.test(100, 'test');
+        }
+
+        public void test(int x,  String y){
+            System.out.println(x, y);
+        } 
+    }
+
+- example3:
+    public class A{
+        public static void main(String args[]){
+            A a1 = new A();
+            a1.test(10, 20, 30, 40, 50);   
+        }
+        public void test(int... x){
+            System.out.println(x[0]);
+            System.out.println(x[1]);
+            System.out.println(x[2]);
+            System.out.println(x[3]);
+            System.out.println(x[4]);
+        }
+    }
+
+
+
+-------------------------------------------------------------------------------------------------
+# What method does?
+    - Method breaks application into smaller reuseable modules.  
+
+
+
+
+
+
+
+
+
 
