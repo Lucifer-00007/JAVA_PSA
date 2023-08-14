@@ -7,6 +7,7 @@
 - [./5. types of variables.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/5.%20types%20of%20variables.txt)
 - [./6. eclipse shortcuts](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/6.%20eclipse%20shortcuts)
 - [./7. constructor.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/7.%20constructor.txt)
+- [./8. data types and type casting.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/8.%20data%20types%20and%20type%20casting.txt)
 - [./Java All notes.pdf](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/Java%20All%20notes.pdf)
 - [./README.md](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/README.md)
 - [./eclipse-workspace/.gitignore](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/eclipse-workspace/.gitignore)
