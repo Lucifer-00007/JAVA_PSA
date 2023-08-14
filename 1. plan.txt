@@ -4,7 +4,6 @@ Start Date: 8/06/22
 
 Last watched: 11th july 
 
-#data type and type casting:
-- https://www.youtube.com/watch?v=NP1uGhHBGhE&list=PLbLiFkJgsmq6j_fFlZuy0xIs6upvrML26&index=5
 
-
+#unary operators in core java
+https://youtube.com/playlist?list=PLQVUMrcSsQIRZOM2vZoh8bPG1nq6X-nTe

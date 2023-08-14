@@ -94,7 +94,60 @@
 
 
 
+-----------------------------------------------------------------------------------------------------
+#Code run flow in java.
 
+- In java when we write a program and save the file, it gets saved as 'className.java'. Now when we run this file its gets compiled by 'JDK(Java Development Kit) compile' into 'byte code' and a 'className.class' file is created. Then this 'className.class' is converted to 'signals' form 'binary code' by 'JRE(Java Runtime Environment)' and hence we get the output.
+
+- JDK:
+    - JDK helps us to compile .java files to .class files.
+
+- JRE:
+    - JRE is a runtime environment helps us to run '.class files'.
+
+- [java program (A.java)] --(JDK compiler)--> [Byte code (A.class)] --(JRE Signal)--> [output]
+
+- public class A {
+    psvm(){
+        A a1 = new A();       ------------>   ...01011001011...     ---------------> o/p signal.      
+    }
+  }
+
+
+
+--------------------------------------------------------------------------------------------------
+# Default Constructor:
+- Note: Whenever we create object it is mandatory to call constructor or else we will get an error.
+- If we do not add a constructor in '.java file', then during the compilation automatically 'empty body with no args constructor' will be added to '.class file':
+    - Example:
+        A.java                    ------------>               A.class file
+        
+        public class A{                                             public class A{
+            psvm(){                     -------->                       A(){                
+                A a1 = new A();                                         }
+            }                                                           psvm(){ 
+        }                                                                   A a1 = new A();
+                                                                    }    
+- Note: Default constructor is not applicable for objects with arguments. 
+    Examples:
+        public class A{
+            psvm(){
+                A a1 = new A(100); //Error
+            }
+        }
+
+- Note: If in the same program objects with and without arguments is created then default constructor is not applicable.  
+    Example:
+        public class A{
+            A(int x){
+
+            }
+            psvm (){
+                A a1 = new A(); //Error
+                A a2 = new A(100);
+                
+            }
+        }
 
 
 

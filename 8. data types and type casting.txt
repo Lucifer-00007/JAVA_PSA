@@ -1,0 +1,118 @@
+# Data types:
+# Source_link: https://www.youtube.com/watch?v=NP1uGhHBGhE&list=PLbLiFkJgsmq6j_fFlZuy0xIs6upvrML26&index=5
+ 
+
+
+Data-type         Memory-size(bytes)       Default-value               
+---------------------------------------------------------
+- byte                 1                      0
+---------------------------------------------------------
+- short                2                      0    
+---------------------------------------------------------
+- int                  4                      0
+---------------------------------------------------------
+- long                 8                      0   
+---------------------------------------------------------
+- float                4                      0.0
+---------------------------------------------------------
+- double               8                      0.0
+---------------------------------------------------------
+- boolean             N/A                     false
+---------------------------------------------------------
+- char                 2                      blank  
+---------------------------------------------------------
+- String              N/A                     null
+---------------------------------------------------------
+
+#Notes:
+- 'byte','short', 'int' and 'long' are integer values. 
+- 'float' and 'double' are decimal values.
+
+
+______________________________________________________________________________________________________
+#Type Casting:
+- Converting a particular date type into required data type is called as typecasting.
+- Type casting is of 2 types:
+    - Auto up-casting.
+        - Converting smaller data type into bigger data type without any loss of data is called as auto up-casting.
+        - Ex: 
+            public class A{
+                psvm(){
+                    int i = 10;
+                    long j = i; //Auto up casting
+                }
+            }
+        
+        - Whenever there is loss of data during conversion regardless of memory size up-casting cannot happen.
+        - Ex1: 
+            public class D{
+                psvm(){
+                    float a = 10.3f;
+                    long j = a; //Error, Since we are trying to convert 'decimal value' to 'integer value' by removing the decimal part so it not an up-casting.             
+                }
+            }    
+        - Ex2: 
+            public class E{
+                psvm(){
+                    float a = 10.3f;
+                    int j = a; //Error, Since we are trying to convert 'decimal value' to 'integer value' by removing the decimal part so it not an up-casting.             
+                }
+            }    
+
+    - Explicit down-casting.
+        - Converting bigger data type to smaller data type is called as explicit down-casting.
+        - Ex1:
+            public class A{
+                psvm(){
+                    int i = 10;
+                    byte j = (byte) i;
+                    S.o.p(j);
+                }
+            }
+        - Ex2:
+            public class B{
+                psvm(){
+                    long i = 10;
+                    int j = (int) i;
+                    S.o.p(j);            
+                }   
+            }
+        
+        - During conversion if there is any loss of data then regardless of memory size we need to perform explicit down-casting.
+        - Ex1: 
+            public class C{
+                psvm(){
+                    float i = 10.3f;
+                    long j = (long) i; 
+                    S.o.p(j);  //10
+                }
+            }     
+        - Ex2: 
+            public class D{
+                psvm(){
+                    float i = 10.3f;
+                    int j = (int) i;
+                    S.o.p(j); //10
+                }
+            }
+        - Ex3: 
+            public class E{
+                psvm(){
+                    long i = 100;
+                    byte j = (byte)(int) i; //multiple down-casting 
+                    S.o.p(j); //100
+                }
+            }
+        - Ex4: 
+            public class F{
+                psvm(){
+                    int i = 100;
+                    long j = (long) i; //For up-casting also we can do explicitly, although it also happens automatically.     
+                    S.o.p(j); //100
+                }
+            }
+
+
+
+
+
