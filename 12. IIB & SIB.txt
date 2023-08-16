@@ -1,0 +1,178 @@
+# Source_link: https://www.youtube.com/watch?v=_3O2bPWckoI&t=124s 
+
+# Instance Initalization Block (IIB):
+    - IIB are executed when objects are created.
+    - As many number of times as we create an 'objects' same number of times 'IIB' will be called.
+    - IIB are used to initialize all 'instance variable in one place'.Thus gives better readability of code
+    - We can initialize both static and non-static variable inside IIB.
+    - If there are multiple IIB then they will run in sequence.
+
+    - Ex1 (no output since object is not created):
+        public class A{
+            {
+                System.out.println("From IIB");
+            }
+            psvm(){                
+            }
+        } 
+
+    - Ex2:
+        public class A{
+            {
+                System.out.println("From IIB");
+            }
+            psvm(){  
+                A a1 = new A();              
+                A a2 = new A();              
+            }
+        } 
+
+    - Ex3 (always 'Constructor' is called after 'IIB'): 
+        public class A{
+            {
+                System.out.println("From IIB");
+            }
+
+            A(){
+                System.out.println("From Constructor");
+            }
+            
+            psvm(){  
+                A a1 = new A();              
+                A a2 = new A();              
+            }
+        } 
+
+    - Ex4: 
+        public class A{
+            {
+                System.out.println("From IIB"); // Execute Second
+            }
+
+            A(){
+                System.out.println("From Constructor"); // Execute third
+            }
+            
+            psvm(){  
+                System.out.println("Start of Main");  // Execute first
+                A a1 = new A();              
+                System.out.println("End of Main"); // Execute last
+            }
+        } 
+
+
+    - Ex5: 
+        public class A{
+            A(){
+                System.out.println("From Constructor"); // Execute third
+            }
+            
+            {
+                System.out.println("From IIB-1"); // Execute first
+            }
+
+            {
+                System.out.println("From IIB-2"); // Execute Second
+            }
+
+            psvm(){  
+                A a1 = new A();              
+            }
+        } 
+
+    - Ex6: 
+        public class A{   
+            int a; // non-static variable.
+            {
+                a = 10; 
+                System.out.println(x); 
+            }
+
+            psvm(){  
+                A a1 = new A();              
+            }
+        } 
+
+    - Ex7: 
+        public class A{   
+            static int a; //static variable.
+            {
+                a = 10; 
+                System.out.println(x); 
+            }
+
+            psvm(){  
+                A a1 = new A();              
+            }
+        } 
+
+
+-------------------------------------------------------------------------------------------------
+# Static Initialization Block(SIB):
+    - SIB runs before main method and it does not require any invoking statement.
+    - If there are multiple SIB then they will run in sequence.  
+    - We can only initialize static variable inside SIB.
+
+    - Ex1:
+        public class A{
+            static
+            {
+                System.out.println("From SIB"); //Always Execute first
+            } 
+            public static void main (){
+                System.out.println("From Main"); //Execute Second 
+            }
+        }
+
+    - Ex2:
+        public class A{
+            static int a;
+            static
+            {
+                a = 100;
+                System.out.println(x); //Always Execute first
+            } 
+            public static void main (){
+                System.out.println("From Main"); //Execute Second 
+            }
+        }
+
+    - Ex3:
+        public class A{
+            static
+            {
+                System.out.println("From SIB-1"); //Execute first
+            } 
+            
+            static
+            {
+                System.out.println("From SIB-2"); //Execute second
+            }
+
+            public static void main (){
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
