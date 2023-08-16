@@ -1,0 +1,110 @@
+# Unary operators:
+    - pre-increment:  ++i
+    - post-increment: i++
+    - pre-decrement: --i 
+    - post-decrement: i--
+
+
+----------------------------------------------------------------------------------
+# Pre Increment:
+-Ex1: 
+    public class A{
+        psvm(){
+            int i = 10;
+            int j = ++i + ++i;
+            S.o.p(i); // 12
+            S.o.p(j); // 23
+        }
+    } 
+
+-Ex2: 
+    public class A{
+        psvm(){
+            int i = 10;
+            int j = ++i + i + ++i;
+            S.o.p(i) // 12
+            S.o.p(j) // 34
+        }
+    }
+
+
+----------------------------------------------------------------------------------
+# Post Increment:
+-Ex1:
+    public class A{
+        psvm(){
+            int i = 10;
+            int j = i++ + i + i++;
+            S.o.p(i); // 12
+            S.o.p(j); // 32
+        }
+    }
+
+-Ex2:
+    public class A{
+        psvm(){
+            int i = 10;
+            int j = ++i + i + i++ + i + i++ + i + ++i;
+            S.o.p(i) // 14
+            S.o.p(j) // 84
+        }
+    }
+
+
+----------------------------------------------------------------------------------
+# Pre Decrement:
+- Ex1: 
+    public class A{
+        psvm(){
+            int i = 10;
+            int j = --i + i + --i;
+            S.o.p(i) // 8
+            S.o.p(j) // 26
+        }    
+    }
+
+
+- Ex2: 
+    public class A{
+        psvm(){
+            int i = 10;
+            int j = --i + i + ++i + i++;
+            S.o.p(i) // 11
+            S.o.p(j) // 38
+        }    
+    }
+
+
+
+----------------------------------------------------------------------------------
+# Post Decrement:
+- Ex1: 
+    public class A{
+        psvm(){
+            int i = 10;
+            int j = i-- + i + i--; //10 + 9 + 9 
+            S.o.p(i) // 8
+            S.o.p(j) // 28
+        }    
+    }
+
+
+- Ex2: 
+    public class A{
+        psvm(){
+            int i = 10;
+            int j = --i + i + i++ + i-- + i + ++i; //9 + 9 + 9 + 10 + 9 + 10
+            S.o.p(i) // 10
+            S.o.p(j) // 56
+        }    
+    }
+
+
+
+
+
+
+
+
+
+

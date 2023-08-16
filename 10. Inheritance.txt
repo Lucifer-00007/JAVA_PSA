@@ -1,0 +1,137 @@
+# Inheritance: 
+    - Here we inherit the members of 'parent class' to 'child class' so that we can re-use that in child class. 
+    - Example1:
+        public class A { //Parent class
+            int x =  10;
+        } 
+
+
+        public class B extends A{ //Child class
+            psvm(){
+                B b1 = new B();
+                S.o.p(b1.x); //10
+            }
+        }
+
+
+    - Example2:
+        public class A { //Parent class
+            int x =  10;
+            public void test(){
+                A a1 = new A();
+                S.o.p(1000);
+            }
+        } 
+
+
+        public class B extends A{ //Child class
+            psvm(){
+                B b1 = new B();
+                S.o.p(b1.x); //10
+            }
+        }
+
+
+-------------------------------------------------------------------------------------------
+# Multi Level Inheritance:
+    - Here we inherit the members of 'parent class' to 'child class' for 2 or more times, so that we can re-use that in child classes.
+    - Example1:
+        public class A { //Parent class
+            public void test1(){
+                S.o.p(1000);
+            }
+        } 
+
+
+        public class B extends A{ //Child class
+            public void test2(){
+                S.o.p(2000); 
+            }
+        }    
+ 
+        public class C extends B{ //Child class
+            public void test2(){
+                S.o.p(3000); 
+            }
+
+            psvm(){
+                C c1 = new C();
+                c1.test1();
+                c1.test2();
+                c1.test3();
+            }
+        }    
+
+
+
+-------------------------------------------------------------------------------------------
+# Multiple Inheritance:
+    - JAVA does not support multiple inheritance at class level but interface support multiple inheritance.
+    - Note: 
+        - Multiple inheritance leads to 'diamond problem' at class level.
+        - "Diamond Problem": It is a common issue that can arise in programming languages that support multiple inheritance, where a class inherits from two or more classes that have a common base class. This problem is often encountered in object-oriented languages like C++.
+             A
+            / \
+           B   C
+            \ /
+             D      
+        - Here, classes B and C both inherit from class A, and class D inherits from both B and C. This creates an ambiguity when trying to access a member or method that is inherited from A through class D. The ambiguity arises because class D has two paths to class A, one through B and the other through C.
+    
+    -  
+
+
+-------------------------------------------------------------------------------------------
+# Non sub classes:
+    - When there is no inheritance between 2 or more classes these classes are called "non-subclasses".
+    - Example1:
+        public class A{
+            int x = 10; 
+        }
+
+        public class B{
+            psvm(){
+                A a1 = new A();
+                S.o.p(a1.x); //10
+            }
+        }
+
+# Sub classes:
+    - When there is inheritance between 2 or more classes these classes are called "subclasses".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

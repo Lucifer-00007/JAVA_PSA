@@ -1,0 +1,8 @@
+# Packages In Java:
+    - Packages in Java is nothing but a folder's created to store program in organized manner.
+
+    - Example1:
+        package pac1;
+        public class A{
+            
+        }   
