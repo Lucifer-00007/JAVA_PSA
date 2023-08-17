@@ -3,6 +3,7 @@
 - [./1. plan.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/1.%20plan.txt)
 - [./10. Inheritance.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/10.%20Inheritance.txt)
 - [./11. packages.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/11.%20packages.txt)
+- [./12. IIB & SIB.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/12.%20IIB%20&%20SIB.txt)
 - [./2. class and new.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/2.%20class%20and%20new.txt)
 - [./3. memory management.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/3.%20memory%20management.txt)
 - [./4. method.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/4.%20method.txt)
