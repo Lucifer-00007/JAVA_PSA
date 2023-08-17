@@ -1,8 +1,102 @@
 # Packages In Java:
     - Packages in Java is nothing but a folder's created to store program in organized manner.
-
     - Example1:
         package pac1;
         public class A{
             
         }   
+
+    - If there is more than one class present in the same package then importing is not required.
+    - But if the classes are present in the different packages then importing is required using 'import' keyword.
+    - Example1:
+        package p1; //Using package 'p1'.   
+        public class A{
+        }
+
+        package p1; //Using package 'p1'.
+        public class B extends A{
+            //no error since class 'A' and 'B' are present in same package 'p1'. 
+        }
+
+        package p2; //Using package 'p2'.
+        import p1.A; //importing package 'p1'.
+        public class C extends A{
+            //now we will not get any error. 
+        }
+
+    - Example2:
+        package p1;
+        public class A{
+        }
+
+        package p1;
+        public class B{
+            psvm(){
+                A a1 = new A();
+            }
+        }
+
+        package p2;
+        import p1.A;
+        public class C{
+            psvm(){
+                A a1 = new A();
+            }
+        }
+
+    - Example3:
+        package p1;
+        public class A{            
+        }
+
+        package p1;
+        public class B{
+            psvm(){
+                A a1 = new A();
+            }
+        }
+
+        package p2;
+        import p1.*; // importing all the classes from package 'p1'.
+        public class C{
+            psvm(){
+                A a1 = new A();
+                B b1 = new B();
+            }
+        }
+
+    - Example4:
+        package p1; 
+        public class A{
+            public void test1(){
+                S.o.p("Class A from package p1");
+            }
+        }
+
+        package p2; 
+        public class A{
+            public void test2(){
+                S.o.p("Class A from package p2");
+            }
+        }
+
+        package p3; 
+        public class B{
+            psvm(){
+                p1.A a1 = new p1.A(); //from package 'p1'. 
+                p2.A a2 = new p2.A(); //from package 'p2'.
+
+                a1.test1();
+                a2.test2();
+            }
+        }
+
+
+
+
+
+
+
+
+
+
