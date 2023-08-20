@@ -2,21 +2,99 @@
 
                                         Private        Default        Protected        Public 
 -----------------------------------------------------------------------------------------------
-- same class                            yes
+- same class                            yes            yes            yes              yes    
 -----------------------------------------------------------------------------------------------
-- same package sub class                no 
+- same package sub class                no             yes            yes              yes  
 -----------------------------------------------------------------------------------------------
-- same package non sub class            no
+- same package non sub class            no             yes            yes              yes 
 -----------------------------------------------------------------------------------------------    
-- different package sub class           no
+- different package sub class           no             no             yes              yes
 -----------------------------------------------------------------------------------------------
-- different package non sub class       no
+- different package non sub class       no             no             no               yes 
 -----------------------------------------------------------------------------------------------
 
-#Note:
-    - If we make a 'method' or 'variable' 'private' then it can can be accessed only inside 'same class' but not outside the class.
+
+- Private: If we make a 'method' or 'variable' 'private' then it can can be accessed only inside 'same class' but not outside the class.
+    Ex(syntax): 
+        package p1;
+        public class A {
+            private int x = 10; //private variable
+            private void test() {  //private method
+                System.out.println(1000); 
+            }
+            public static void main(String[] args) {
+                A a1 = new A();
+                System.out.println(a1.x);
+                a1.test();
+            }
+        }
 
 
+-----------------------------------------------------------------------------------------------
+- Default: If we make a 'method' or 'variable' 'default' then it can can be accessed inside 'same class and same package' but not outside the package.
+    Ex(syntax): 
+        public class A {
+            int x = 10; //default variable
+            void test() { //default method
+                System.out.println(1000); 
+            }
+            public static void main(String[] args) {
+                A a1 = new A();
+                System.out.println(a1.x);
+                a1.test();
+            }
+        }
+
+
+-----------------------------------------------------------------------------------------------
+- Protected: If we make a 'method' or 'variable' 'protected' then it can be accessed inside 'same class', 'same package' and 'different package by inheritance only'. 
+    Ex(syntax):
+        public class A {
+            protected int x = 10; //protected variable
+            protected void test() { //protected method
+                S.o.p(1000);
+            }
+        }
+
+
+-----------------------------------------------------------------------------------------------
+- Public:If we make a 'method' or 'variable' 'public' then it can be accessed inside 'same class', 'same package' and 'different packages' also. 
+    Ex(syntax):
+        public class A{
+            public int x = 10; //public variable
+            public void test() { //public method
+                S.o.p(100);
+            } 
+        }
+
+
+-----------------------------------------------------------------------------------------------
+#Notes:
+    - Access Specifier cannot be used with local variables or inside a method. 
+    - A 'class' cannot be 'private' or 'protected'.
+        - Ex1: 
+            private class A { //Error
+                psvm(){
+                }
+            }
+
+        - Ex2: 
+            protected class A { //Error
+                psvm(){
+                }
+            }
+ 
+        - Ex3(syntax): 
+            class A { //Default class
+                psvm(){
+                }
+            }
+
+        - Ex3(syntax): 
+            public class A { //Public class
+                psvm(){
+                }
+            }
 
 
 
