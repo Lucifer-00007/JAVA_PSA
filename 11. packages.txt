@@ -8,7 +8,7 @@
 
     - If there is more than one class present in the same package then importing is not required.
     - But if the classes are present in the different packages then importing is required using 'import' keyword.
-    - Example1:
+    - Example1(same and diff package with inheritance):
         package p1; //Using package 'p1'.   
         public class A{
         }
@@ -24,7 +24,7 @@
             //now we will not get any error. 
         }
 
-    - Example2:
+    - Example2(same and diff package without inheritance):
         package p1;
         public class A{
         }
@@ -44,7 +44,7 @@
             }
         }
 
-    - Example3:
+    - Example3(same and diff package without inheritance):
         package p1;
         public class A{            
         }
@@ -65,7 +65,7 @@
             }
         }
 
-    - Example4:
+    - Example4(same and diff package without inheritance):
         package p1; 
         public class A{
             public void test1(){
