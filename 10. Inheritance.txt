@@ -50,7 +50,7 @@
         }    
  
         public class C extends B{ //Child class
-            public void test2(){
+            public void test3(){
                 S.o.p(3000); 
             }
 

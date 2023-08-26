@@ -1,0 +1,216 @@
+#Access specifier on constructors:
+
+#Note:
+    - A constructor is never inherited irrespective of the constructor being 'private', 'default', 'protected' or 'public'.  
+    - But 'constructor type' can decide whether a 'class can be inherited' or not.
+
+----------------------------------------------------------------------------------------------    
+# Private:
+    - If we make a 'constructor private' then it's 'object' can only created 'in same class'.
+    - Outside same class we cannot create object if the constructor is private.
+    - Example:
+        package p1; 
+        public class A{
+            private A() {
+            }
+            p.s.v.m(){
+                A a1 = new A();  //Inside same class object is created. 
+            }
+
+        }
+
+        package p1; 
+        public class B{
+            p.s.v.m(){
+                A a1 = new A();  //Error in same package non-sub class 
+            }
+
+        }
+
+        package p2;
+        import p1.A; 
+        public class C{
+            p.s.v.m(){
+                A a1 = new A();  //Error in diff package non-sub class 
+            }
+
+        }
+
+    - If you make a constructor private then inheritance is not allowed.
+    - Example:
+        package p1;
+        public class A {
+            private A(){
+            } 
+        } 
+
+        package p1;
+        public class B extends A {  //Error
+            p.s.v.m(){
+            }
+        }
+
+        package p2;
+        import p1.A;
+        public class C extends A {  //Error
+            p.s.v.m(){
+            }
+        }
+
+
+-----------------------------------------------------------------------------------------------
+# Default:
+    - If we make a 'constructor default' then it's 'object' can be created in 'same class' and 'same package' only.
+    - Example:
+        package p1;
+        public class A{
+            A(){
+            }
+
+            p.s.v.m(){
+                A a1 = new A(); //no Error        
+            }
+        }
+
+        package p1;
+        public class B{
+            p.s.v.m(){
+                A a1 = new A(); //no Error        
+            }
+        }
+
+        package p2;
+        import p1.A;
+        public class C{
+            p.s.v.m(){
+                A a1 = new A(); //Error        
+            }
+        }
+
+    - If you make a constructor 'default' then inheritance is not allowed 'outside same package'.
+    - Example:
+        package p1;
+        public class A {
+            A(){
+            } 
+        } 
+
+        package p1;
+        public class B extends A { //no Error 
+            p.s.v.m(){
+            }
+        }
+
+        package p2;
+        import p1.A;
+        public class C extends A {  //Error
+            p.s.v.m(){
+            }
+        }
+
+
+-------------------------------------------------------------------------------------------------
+# Protected
+    - If we make a 'constructor protected' then it's 'object' can be created in 'same class' and 'same package' only.
+    - Example:
+        package p1;
+        public class A{
+            protected A(){
+            }
+
+            p.s.v.m(){
+                A a1 = new A(); //no Error        
+            }
+        }
+
+        package p1;
+        public class B{
+            p.s.v.m(){
+                A a1 = new A(); //no Error        
+            }
+        }
+
+        package p2;
+        import p1.A;
+        public class C{
+            p.s.v.m(){
+                A a1 = new A(); //Error        
+            }
+        }
+
+    - If you make a constructor 'protected' then inheritance is allowed in 'same package' and 'different package'.
+    - Example:
+        package p1;
+        public class A {
+            protected A(){
+            } 
+        } 
+
+        package p1;
+        public class B extends A { //no Error 
+            p.s.v.m(){
+            }
+        }
+
+        package p2;
+        import p1.A;
+        public class C extends A {  //no Error
+            p.s.v.m(){
+            }
+        }
+
+
+-------------------------------------------------------------------------------------------------
+# Public
+    - If we make a 'constructor public' then it's 'object' can be created in 'same class' and 'same package' and 'diff package ' also.
+    - Example:
+        package p1;
+        public class A{
+            public A(){
+            }
+
+            p.s.v.m(){
+                A a1 = new A(); //no Error        
+            }
+        }
+
+        package p1;
+        public class B{
+            p.s.v.m(){
+                A a1 = new A(); //no Error        
+            }
+        }
+
+        package p2;
+        import p1.A;
+        public class C{
+            p.s.v.m(){
+                A a1 = new A(); //no Error        
+            }
+        }
+
+    - If you make a constructor 'public' then inheritance is allowed in 'same package' and 'different package' also.
+    - Example:
+        package p1;
+        public class A {
+            public A(){
+            } 
+        } 
+
+        package p1;
+        public class B extends A { //no Error 
+            p.s.v.m(){
+            }
+        }
+
+        package p2;
+        import p1.A;
+        public class C extends A {  //no Error
+            p.s.v.m(){
+            }
+        }
+
+
+
+
+

@@ -1,0 +1,50 @@
+# Var type in java:
+
+- 'var' type was introduced in 'JDK version 10';
+
+- A variable with the type var can store any kind of value in it:
+    Example:
+        package p1; 
+        public class A{
+            p.s.v.m(){
+                var x1 = 10;
+                var x2 = 10.3;
+                var x3 = "mike";
+                var x4 = new A();
+
+                S.o.p(x1); //10
+                S.o.p(x2); //10.3
+                S.o.p(x3); //"mike"
+                S.o.p(x4); //address of object
+            }
+        }
+
+- A variable with the type 'var' can only be 'local' and it cannot be 'static or non-static'.
+    Example:
+        package p1;
+        
+        static var x1 = 5; //Error
+        var x1 = 7; //Error
+
+        public class A{
+            p.s.v.m(){
+                var x3 = 10; //10
+            }
+        } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

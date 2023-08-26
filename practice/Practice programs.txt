@@ -1,0 +1,25 @@
+1. WAP to create 3 objects.
+
+2. WAP for constructor overloading.
+
+3. WAP with static, non-static, and local variables. 
+
+4. WAP for multi level inheritance in same package. 
+
+5. WAP for multiple inheritance. (not possible due to 'diamond problem').   
+
+6. WAP for multi level inheritance in diff package. 
+
+7. WAP for up-casting and down-casting.   
+
+
+
+
+
+
+
+
+
+
+
+
