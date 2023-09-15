@@ -1,0 +1,192 @@
+#JAVA 8 Features:
+    - Functional Interface.
+    - Default keyword.
+    - Lambdas expression.
+    - Optional class.
+    - Stream API.       
+
+Note: In versions 8 complete 'main method' is allowed in interface, but incomplete 'static method' is not allowed in interface(Even in version 7 'incomplete static method' is 'not' allowed):
+    - Ex:
+        package p1;
+        public interface A{
+            public static void main (String[] args){
+                //No Error
+            } 
+            
+            public static void test(); //Error: Incomplete static method is not allowed  
+            
+        }
+
+
+-------------------------------------------------------------------------------------------
+#Functional Interface.
+    - It was introduced in JAVA 8 version
+    - It is implemented to an interface using the annotation '@FunctionalInterface'. 
+    - A functional interface should consist of exactly one 'incomplete method'(abstract method) in it.
+        EX1: 
+            package p1;
+            @FunctionalInterface
+            public interface A{
+                //Error: no 'abstract method'.
+            }  
+
+        EX2: 
+            package p1;
+            @FunctionalInterface
+            public interface A{
+                public void test1();
+                public void test2(); //Error: more than one 'abstract method'.
+            }  
+
+        EX3(perfect): 
+            package p1;
+            @FunctionalInterface
+            public interface A{
+                public void test1(); //no-error
+            }  
+
+
+    - Q. Can we do multiple inheritance on functional interface?
+        - No, since 'functional interface' allows only one abstract class.
+        - EX: 
+            package p1;
+            @FunctionalInterface
+            public interface A{
+                public void test1(); 
+            }  
+
+            package p1;
+            @FunctionalInterface
+            public interface B{
+                public void test2(); 
+            }  
+
+            package p1;
+            @FunctionalInterface
+            public interface C extends A,B{ //Error
+            
+            }  
+        
+        - But, we can do multiple inheritance bw functional interface to normal interface:
+        - EX: 
+            package p1;
+            @FunctionalInterface
+            public interface A{  //'A' is a functional interface.
+                public void test1(); 
+            }  
+
+            package p1;
+            @FunctionalInterface
+            public interface B{  //'B' is a functional interface.
+                public void test2(); 
+            }  
+
+            package p1;
+            public interface C extends A,B{  //'C' is a normal interface.
+                // no-error
+            }               
+
+
+-------------------------------------------------------------------------------------------
+#Default keyword.
+    - 'default' keyword was introduced in version 8 of java.
+    - Using 'default' keyword we can create complete methods inside interface.   
+        - Ex: 
+            package p1;
+            public interface A{
+                default void test(){  //Creating complete methods inside interface with 'default'
+                    S.o.p(100);
+                }
+            }    
+
+            package p1;
+            public class B implements A{
+                psvm(){
+                    B b1 = new B();
+                    b1.test();  
+                }
+            }    
+
+    - Inside 'functional interface' 'incomplete method' should be 'one',  but we can have multiple 'default methods'.
+        - Ex: 
+            package p1;
+            @FunctionalInterface
+            public interface A{
+                public void test1(); //Abstract method 
+   
+                default void test2(){  //Creating complete methods inside interface with 'default'
+                    S.o.p(100);
+                }
+
+                default void test3(){  //We can create multiple default methods
+                    S.o.p(100);
+                }
+            }    
+
+            package p1;
+            public class B implements A{
+                @Override
+                public void test1() {
+                    S.o.p('From test1')
+                }
+
+                psvm(){
+                    B b1 = new B();
+                    b1.test();  
+                }
+            }    
+
+    - 
+
+
+-------------------------------------------------------------------------------------------
+#Lambdas expression.
+
+
+-------------------------------------------------------------------------------------------
+#Optional class.
+
+
+-------------------------------------------------------------------------------------------
+#Stream API.       
+
+
+-------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

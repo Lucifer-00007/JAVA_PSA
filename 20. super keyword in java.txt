@@ -1,0 +1,244 @@
+#Source_link: https://www.youtube.com/watch?v=KETJakbA6tw&t=37s
+
+#Super keyword in Java:
+    - Using 'super' keyword we can access the members of parent class.
+    - It is compulsory to use inheritance to use 'super' keyword.
+    - Using 'super' we can access 'static' and 'non-static' members. 
+        - EX1:
+            public class A{
+                int i = 10;
+                
+                static int j = 15; 
+
+                public void xyz(){
+                    S.o.p(100);
+                }
+            }    
+
+            public class B extends A{ //Since 'A' is the parent class so it's also a 'super-class'. 
+                psvm(){
+                    B b1 = new B();
+                    b1.test();
+                }
+
+                public void test() {
+                    S.o.p(super.i); //10
+                    S.o.p(super.j); //15
+                    super.xyz();    //100
+                }
+            }
+    
+    - 'super' keyword cannot be used inside 'static' context(eg: static method)!
+        - EX1:
+            public class A{
+                int i = 10;
+            }    
+
+            public class B extends A{ //Since 'A' is the parent class so it's also a 'super-class'. 
+                psvm(){
+                    B b1 = new B();
+                    b1.test();
+                    S.o.p(super.i); //Error
+                }
+
+                public static void test() {
+                    S.o.p(super.i); //Error
+                }
+            }
+    
+    - Using 'super' keyword we can call 'constructor' of parent class, but then we should use 'super'keyword in child class constructor and it should be the very first statement:
+        
+        - Note: 'constructor' is never inherited, we just call the 'constructor' of parent class  using 'super' keyword inside the child class. 
+        
+        - EX1: 
+            public class A{
+                A(){
+                    S.o.p(100);
+                }
+            }
+
+            public class B extends A{
+                B(){
+                    super(); //calling the constructor of parent class 
+                }
+                psvm(){
+                    new B();
+                }
+            }
+
+        - EX2('super' should be used as first statement in child constructor): 
+            public class A{
+                A(){
+                    S.o.p(100);
+                }
+            }
+
+            public class B extends A{
+                B(){
+                    S.o.p(50);
+                    super(); //Error, as 'super' not used as first statement in child constructor. 
+                }
+                psvm(){
+                    new B();
+                }
+            }
+
+    - If we don't give 'super' keyword in child class constructor then compiler will automatically place the 'super' keyword in 'className.class' file such that it can call 'no-args constructor' of parent class:
+        - EX1: 
+            public class A{
+                A(){  // no-args constructor
+                    S.o.p(100);
+                }
+            }
+
+            public class B extends A{
+                B(){
+                    //automatically 'super()' is added during compilation.     
+                }
+                psvm(){
+                    new B();
+                }
+            }
+
+        - EX2 (If we don't create 'constructor' in child class, then compiler will automatically place the 'constructor' with 'super' in 'className.class' file): 
+            public class A{
+                A(){  // no-args constructor
+                    S.o.p(100);
+                }
+            }
+
+            public class B extends A{
+                //automatically 'constructor' with 'super()' is added during compilation.     
+                psvm(){
+                    new B();
+                }
+            }
+
+        - EX3 (In every child class constructor 'super()' is auto added to 'className.class' file during compilation): 
+            public class A{
+                A(){  // no-args constructor
+                    S.o.p(100);
+                }
+            }
+
+            public class B extends A{
+                B(){
+                    //automatically 'super()' is added during compilation.
+                    S.o.p("H"); //H     
+                }
+                psvm(){
+                    new B();
+                }
+            }
+
+
+    - If the parent class has 'only one constructor' with arguments, then we will have to write 'super()' in the constructor of child class or we get an error. 
+    - Whereas if there are 'multiple constructors' with and without arguments in parent class, writing 'super()' is not mandatory:
+        - EX1:
+            public class A{
+                A(int i){  //constructor with argument
+                    S.o.p(i);
+                }
+            }
+
+            public class B extends A{
+                B(){
+                    //Error: 'super()' is not mentioned although there is constructor with argument.
+                    S.o.p("B");
+                }
+                psvm(){
+                    new B();
+                }
+            }
+
+        - EX2:
+            public class A{
+                A(int i){ 
+                    S.o.p(i);
+                }
+            }
+
+            public class B extends A{
+                B(){
+                    super(100);
+                    S.o.p("B");
+                }
+                psvm(){
+                    new B();
+                }
+            }
+
+        - EX3(If parent class has multiple constructors with a 'no-argument constructor'):
+            public class A{
+                A(){ //no-argument constructor
+                    S.o.p(100);
+                }
+     
+                A(int i){ 
+                    S.o.p(i);
+                }
+            }
+
+            public class B extends A{
+                B(){
+                    S.o.p("B");
+                }
+                psvm(){
+                    new B();
+                }
+            }
+
+    - We cannot use 'super()' and 'this()' in same constructor to call another constructor as, one of them become 'second statement' and we get error:
+    - And if we use 'this()' then 'super()' will not be created in the 'child class constructor automatically'. 
+        - EX1:
+            public class A{
+                A(int i){ 
+                    S.o.p(i);
+                }
+            }
+
+            public class B extends A{
+                B(){
+                    super(100);
+                    this(200); //Error: We cannot se 'this()' and 'super()' together
+                    S.o.p("B");
+                }
+                B(int x){
+                    this();
+                    S.o.p(x);
+                }
+                psvm(){
+                    new B();
+                }
+            }
+
+        - EX2(if we use 'this()' then 'super()' will not be created in the 'child class constructor automatically'):
+            public class A{
+                A(){  
+                    S.o.p(100);
+                }
+            }
+
+            public class B extends A{
+                B(){ //'super()' keyword is added automatically here.
+                    S.o.p("B");
+                }
+                B(int x){ //'super()' keyword is not added automatically here.
+                    this(); 
+                    S.o.p(x);
+                }
+                psvm(){
+                    new B(100);
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,97 @@
+1. What is class?
+    -> Class is a blue-print where object is created. Class creates object when it receives a request from new keyword.
+    -> Object is the instance of class.
+
+2. What is object ?
+    -> Object is the instance of class.
+    -> object is a real-world entity that has state and behavior.
+
+3. What is garbage collector in JAVA?
+    -> Garbage collector helps java for memory management in efficient and effective manner by regularly removing unused objects from memory space and thus avoiding memory overflow. 
+
+4. What is static variable in JAVA?
+    -> Static variable are class members.
+    -> Static variable are created inside the class but outside the method by using 'static' keyword.
+    -> It has global access. We can use use them anywhere in the program. 
+    -> It is not mandatory to initialize. If we don't initialize, depending upon data type auto initialization takes place.
+    -> We need not have to create object for accessing it.
+
+5. What is non-static variable in JAVA?
+    -> Non-static variable are object members.
+    -> Non-static variable are created inside the class outside method without using 'static' keyword.
+    -> These variable are also called as instance variables.
+    -> Only after creating object, we can access non-static variables.
+    -> It is not mandatory to initialize. If we don't initialize, depending upon data type default value will store into it.
+
+6. What is local variable?
+    -> Local variable are created inside method and should be used only inside created method.
+    -> It is mandatory to initialize. If we don't initialize, it will show an error.
+    -> Local variable names inside different method can be same.      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

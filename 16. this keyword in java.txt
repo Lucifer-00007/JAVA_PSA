@@ -1,0 +1,200 @@
+# 'this' keyword (just like reference variable in:  'A a1 = new A()'):
+
+-> Some General Properties of 'this' keyword:   
+    - 'this' keyword is a special reference variable that automatically get's created  to store object's address.  
+        - Ex:
+            public class A {
+                p.s.v.m(){
+                    A a1 = new A();
+                    S.o.p(a1); //object's address
+                    a1.test();
+                }
+
+                public void test(){
+                    S.o.p(this); //object's address
+                }
+            }
+    
+    - Using 'this' keyword we can access 'non-static' members.
+        - Ex:
+            public class A{
+                int x = 11; //non-static
+                p.s.v.m(){
+                    A a1 = new A();
+                    S.o.p(a1.x);  //11
+                    a1.test();
+                }
+
+                public void test() {
+                    S.o.p(this.x); //11
+                }
+
+            }
+
+    - Using 'this' keyword we can access 'static variable and methods', it will work but should not be performed as shown in below example:
+        - Ex:
+            public class A{
+                static int x=10;
+                p.s.v.m(){
+                    A a1 = new A();
+                    a1.test();
+                }
+                public void test(){
+                    S.o.p(this.x)  // 10 (warning: it's wrong practice!)
+                }
+            }
+
+    - We cannot use 'this' keyword inside static methods, hence below program throws error:
+        - Ex:
+            public class A{
+                p.s.v.m(){
+                    A a1 = new A();
+                    S.o.p(this);  // Error since 'main method' is static. 
+                    a1.test();
+                }
+
+                public static void test() {
+                    S.o.p(this); // Error since this method is static. 
+                }
+            }        
+            
+    - 'this' keyword points to the current object running in the program (video => 01/08/23):
+        Ex: 
+            public class A{
+                p.s.v.m(){
+                    A a1 = new A();
+                    a1.test();  // 'this' keyword points to object 'a1'    
+                    
+                    A a2 = new A();
+                    a2.test();  // 'this' keyword points to object 'a2' 
+                    a1.test();  // 'this' keyword points to object 'a1'
+                    a2.test();  // 'this' keyword points to object 'a2'
+                    
+                    A a3 = new A();
+                    a2.test();  // 'this' keyword points to object 'a2' 
+                    a3.test();  // 'this' keyword points to object 'a3'
+                    a1.test();  // 'this' keyword points to object 'a1'
+
+
+            }
+
+            public void test() {
+                S.o.p(this);  
+            }
+        }        
+
+
+--------------------------------------------------------------------------------------------------
+-> There are 2 usage of 'this' keyword:
+    - this.nonStaticMemberName 
+    - this() 
+        => it is use used to call constructor from another constructor. 
+            Ex1:
+                public class A{
+                A(int x){
+                    S.o.p(x);  //100
+                }
+                
+                A(){
+                    this(100); 
+                }
+                
+                p.s.v.m(){
+                    A a1 = new A();
+                } 
+                }
+
+            Ex2:
+                public class A{
+                A(int x, int y){
+                    S.o.p(x);  //200
+                    S.o.p(y);  //300
+                }
+
+                A(int x){
+                    this(200, 300);
+                }
+                
+                A(){
+                    this(100); 
+                }
+                
+                p.s.v.m(){
+                    A a1 = new A();
+                } 
+                }
+
+            Ex3:
+                public class A{
+                    int x; //non-static
+
+                    A(int i){
+                        this.x = i;
+                    }
+
+                    p.s.v.m(){
+                        A a1 = new A();
+                    }
+                }
+
+
+        => While calling constructor using 'this()' keyword ensure it is the 'first statement' inside another constructor.
+            Ex:
+                public class A {
+                    A(int x){
+                        S.o.p(x);
+                    }
+                    
+                    A(){
+                        S.o.p(10);
+                        this(100); //Error since 'this()' is not the first statement.
+                    }
+
+                    p.s.v.m(){
+                        A a1 = new A();
+                    }
+                }
+
+
+--------------------------------------------------------------------------------------------------
+-> What is constructor chaining?
+    - When we call a constructor from another constructor it is called as constructor chaining.
+        Ex1:
+            public class A{
+               A(int x){
+                S.o.p(x);  //100
+               }
+               
+               A(){
+                this(100); 
+               }
+               
+               p.s.v.m(){
+                A a1 = new A();
+               } 
+            }
+
+        Ex2:
+            public class A{
+               A(int x){
+                S.o.p(x);  //100
+               }
+               
+               A(){
+                A a2 = new A(100);   
+               }
+               
+               p.s.v.m(){
+                A a1 = new A();
+               } 
+            }
+
+
+
+
+
+
+
+
+
+

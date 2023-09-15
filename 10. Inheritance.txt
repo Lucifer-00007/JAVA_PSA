@@ -99,9 +99,142 @@
     - When there is inheritance between 2 or more classes these classes are called "subclasses".
 
 
+-------------------------------------------------------------------------------------------
+#Inheritance bw class and interface:
+    - From "interface" to "class"  ----> we use 'implements' keyword.
+    - From "class" to "class"  ----> we use 'extends' keyword.
+    - From "interface" to "interface"  ----> we use 'extends' keyword.
+
+    - Ex1(Inheritance bw class & interface): 
+        package p1;
+        public interface A {
+            public void test();
+        } 
+
+        package p1;
+        public class B implements A{   //Inheriting 'interface A' to 'class B' using 'implements'. 
+            @Override                  //Here '@Override' is used to check if overriding is taking place or not.  
+            public void test(){
+                S.o.p(100);
+            }
+        } 
 
 
 
+-------------------------------------------------------------------------------------------
+#Note:
+    - We cannot inherit 'static methods'.
+        EX1:
+            package p1;
+            public class A{
+                public static void test(){
+                }
+            }  
+
+            package p1;
+            public class B extends A{
+                @Override
+                public static void test(){ // Error
+                }
+            }  
+        
+        EX2 (In bellow prog during compilation 'B.test()' is converted to 'A.test()' and hence no error):
+            package p1;
+            public class A{
+                public static void test(){
+                    Sop(100);
+                }
+            }  
+
+            package p1;
+            public class B extends A{
+                psvm(){
+                    B.test(); //100, since 'B.test()' gets converted to 'A.test()' 
+                }
+            }  
+
+
+-------------------------------------------------------------------------------------------
+#Note: 
+    - Inheritance bw 'class', 'interface' and 'another class' can be done together.
+    - Use 'extends' before 'implements' when using them together, else we will get an error.
+    - Ex:
+        package p1;
+        public class A{
+            public void test1() {
+                S.o.p(100);
+            }
+        }
+
+        package p1;
+        public interface B{
+            public int test2(int a); 
+        }
+
+        package p1;
+        public class C extends A implements B {  //always use 'extends' before 'implements'
+            @Override
+            public int test2(int a) {                
+                return a;
+            }
+
+            psvm(){
+                C c1 = new C();
+                c1.test1();
+                int val = c1.test2(200);
+                S.o.p(val);
+            } 
+        }
+
+
+-------------------------------------------------------------------------------------------
+Q. Can we do multiple inheritance on functional interface?
+    - No, since 'functional interface' allows only one abstract class.
+    - EX: 
+        package p1;
+        @FunctionalInterface
+        public interface A{
+            public void test1(); 
+        }  
+
+        package p1;
+        @FunctionalInterface
+        public interface B{
+            public void test2(); 
+        }  
+
+        package p1;
+        @FunctionalInterface
+        public interface C extends A,B{ //Error
+        
+        }  
+    
+    - But, we can do multiple inheritance bw 'functional interface' to 'normal interface':
+    - EX: 
+        package p1;
+        @FunctionalInterface
+        public interface A{  //'A' is a functional interface.
+            public void test1(); 
+        }  
+
+        package p1;
+        @FunctionalInterface
+        public interface B{  //'B' is a functional interface.
+            public void test2(); 
+        }  
+
+        package p1;
+        public interface C extends A,B{  //'C' is a normal interface.
+            // no-error
+        }               
+
+
+
+-------------------------------------------------------------------------------------------
+
+
+
+-------------------------------------------------------------------------------------------
 
 
 

@@ -12,7 +12,7 @@
 
 7. WAP for up-casting and down-casting.   
 
-
+8. WAP to create a method that cannot return a value but can print "Hello, world". 
 
 
 

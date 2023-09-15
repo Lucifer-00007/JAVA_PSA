@@ -1,4 +1,5 @@
 # Constructor:
+- Constructors are almost similar to methods except for two things -> its name is the same as the class name and it has no return type.
 - Constructor should have same name as that of the class.
 
 - Whenever object is created constructor will get called.

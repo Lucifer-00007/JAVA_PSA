@@ -1,9 +1,8 @@
-15t => 19
+20t => 15 left
 
-Start Date: 8/07/23  
+Start Date => 8/07/23  
 
-Last watched: 31/07/2023 
+Last watched => 11/08/2023 
 
-
-
+Practice_left => 16 - 21    
 

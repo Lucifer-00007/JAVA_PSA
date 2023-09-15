@@ -1,0 +1,59 @@
+# final keyword in java (constant variable):
+    - If we make a variable 'final', then changing its value is not allowed.
+        - EX: 
+            public class A{
+                public static void main(String[] args) {
+                    final int x = 10;
+                    x = 20; //Error
+                    System.out.println(x);
+                }
+            }
+    
+    - If we make a static/non-static variable final, then initialization is mandatory:
+        - EX: 
+            public class A{
+                public static void main(String[] args) {
+                    final static int x; //Error (Blank field errors)
+                    final int y; //Error (Blank field errors)
+
+                    final static int x1 = 10; //no-error
+                    final int y1 = 20;  //no-error
+                }
+            }
+
+    - If we make a method final, then overriding is not allowed:
+        - EX:
+            package p1; 
+            public class A{
+                final public void test(){
+                    System.out.println(100);
+                }
+            }
+
+            package p1; 
+            public class B extends A{
+                @Override
+                public void test(){ //Error
+
+                }
+            }
+
+    - If we make a class final, then inheritance is not allowed:
+        - EX:
+            package p1; 
+            final public class A{
+            }
+
+            package p1; 
+            public class B extends A{ //Error: 
+            }
+
+
+
+
+
+
+
+
+
+

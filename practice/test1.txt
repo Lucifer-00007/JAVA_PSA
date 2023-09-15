@@ -136,4 +136,136 @@ public class A{
 
 
 ------------------------------------------------------------------------------------------------
+class: class is a blueprint where object is created.
+object: Object is an instance of a class.
+
+public class A{
+    psvm(){
+        A a1 = new A();
+        Sop(a1);
+    }
+}
+
+
+Static: 
+    - the variables 'static' keyword in front is called static variables.
+    - they are inside the class but outside the main method.
+    - They are only accessible by the class.   
+
+Non-static:
+    - The variables that are inside the class but outside the main method nad doesn't have 'static' keyword are non-static variables.  
+    - they are accessible by creating instance(object)
+
+local variables:
+    - The variables that are inside a method are local variables.
+    - they are accessible inside the method where it is created.
+
+pubic class A{
+    int x = 10;
+    static int y = 11; 
+    psvm(){
+        int z = 12;
+        A a1 = new A();
+        Sop(A.x); //10
+        Sop(a1.y); //11
+        Sop(z); //12
+    }
+} 
+
+
+constructor: 
+    - Constructors are like method without any return type and it's name is same as class name. 
+    public class A{
+        A(){
+            Sop("Hello world");
+        }
+        psvm(){
+            A a1 = new A();
+        }
+    }
+
+constructor overloading:
+    - When we created multiple constructors with diff number arguments is called constructor overloading.
+    public class A{
+        A(){
+            Sop("Hello world");
+        }
+        A(int a){
+            Sop(a);
+        }
+        A(int a1, int a2){
+            Sop(a1);
+            Sop(a2);
+        }
+        psvm() {
+            A a1 = new A();
+            A a2 = new A(10);
+            A a3 = new A(20, 30);
+        }
+    }
+
+
+default constructor:
+    - If we don't create a constructor but create and object then during compilation automatically a constructor is created called as default constructor.
+
+
+public class A{
+    void test() {
+        Sop("Hello, world!");
+    }
+    psvm(){
+        A a1 = new A();
+        a1.test();
+    }
+}    
+
+
+pubic class A{
+    A(){
+        Sop("a");
+    }
+    public static void test1(){
+        Sop("abc");
+    }
+    pubic void test2(){
+        Sop("xyz");
+    }
+    psvm() {
+        A a1 = new A();
+        a1.test2();
+        A.test1();
+    }
+} 
+
+
+pubic class A{
+    A(int x){
+        Sop(x);
+    }
+    public static void test1(z){
+        Sop(z);
+    }
+    pubic void test2(y){
+        Sop(y);
+    }
+    psvm() {
+        A.test1(30); //30
+        A a1 = new A(10); //10
+        a1.test2(20); //20    
+    }
+} 
+
+
+public class A{
+    public static int test(x, y){
+        return x+y;
+    }
+
+    psvm(){
+        Sop(A.test(10,20));
+    }
+}
+
+
+
 

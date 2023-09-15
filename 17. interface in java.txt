@@ -1,0 +1,188 @@
+#Interface:
+
+Interface                                    | Class  
+--------------------------------------------------------------------------------------------
+- Syntax:                                     - Syntax:            
+    package p1;                                  package p1;
+    public interface A {                         public class A {   
+        public void test();                          public void test(){         
+    }                                                }
+                                                 }     
+
+--------------------------------------------------------------------------------------------
+- Saved as "A.java" file.                     - Saved as "A.java" file.
+--------------------------------------------------------------------------------------------
+
+
+#Properties of interfaces:
+    - An interface can consist of incomplete methods only. Else we will get an error.
+    - Abstract-methods: These incomplete methods inside the interface is called 'Abstract methods'.
+        Ex1:
+        public interface{
+            public void test() { //error
+            }
+        } 
+
+        Ex2:
+        public interface{
+            public void test(); //no error
+        } 
+    
+    
+--------------------------------------------------------------------------------------------
+#Inheritance bw class and interface:
+    - From "interface" to "class"  ----> we use 'implements' keyword.
+    - From "class" to "class"  ----> we use 'extends' keyword.
+    - From "interface" to "interface"  ----> we use 'extends' keyword.
+
+
+#Note: 
+    - When a class 'implements' an 'interface' then the class has to 'override' the 'incomplete method' of interface & complete that or else we will get an error.
+    - Here '@Override' is used to check if overriding is taking place or not. 
+
+    Ex1: 
+        package p1;
+        public interface A {
+            public void test();
+        } 
+
+        package p1;
+        public class B implements A{ //Inheriting 'interface A' to 'class B' using 'implements'. 
+            @Override
+            public void test(){
+            }
+        } 
+
+    Ex2: 
+        package p1;
+        public interface A {
+            public void test();
+        } 
+
+        package p1;
+        public class B implements A{ //Inheriting 'interface A' to 'class B' using 'implements'. 
+            @Override
+            public void test(){
+                Sop(100);
+            }
+
+            psvm(){
+                B b1 = new B();
+                b1.test(); //100
+            }
+        } 
+
+    
+--------------------------------------------------------------------------------------------
+#Marker Interface:
+    - An empty interface is called marker interface.
+    - EX:
+        package p1;
+        public interface A {
+        }
+
+
+--------------------------------------------------------------------------------------------
+# Multiple Inheritance in Interface:
+    - There is no 'Multiple-Inheritance' allowed between 'class-to-class'
+    - But if the parents are 'interface' then 'Multiple-Inheritance' is allowed, regardless of the child being a 'class' or 'interface'.
+        Ex1:
+            package p1;
+            public interface A {
+                public void test1();
+            }
+
+            package p1;
+            //test1, test2
+            public interface B extends A { // inheritance bw 'interface-to-interface'
+                public void test2();
+            }
+
+            package p1;
+            public interface C extends A,B { // Multiple-Inheritance bw 'interface-to-interface'
+            
+            }
+
+        Ex2:
+            package p1;
+            public interface A {
+                public void test1();
+            }
+
+            package p1;
+            //test1, test2
+            public interface B extends A { // inheritance bw 'interface-to-interface'
+                public void test2();
+            }
+
+            package p1;
+            public class C implements A,B { // Multiple-Inheritance bw 'interface-to-class'
+                @Override
+                public void test1(){
+                    //Since this is class so we cannot use 'abstract methods'
+                }
+
+                @Override
+                public void test2(){
+                    //Since this is class so we cannot use 'abstract methods'
+                }
+            }
+
+
+--------------------------------------------------------------------------------------------
+#Note: By default variables in an interface are final and static:
+    - EX:
+        package p1;
+        public interface A{
+            int id = 10;
+            static final String name = "mike";
+        } 
+
+        package p1;
+        public class B{
+            public static void main(String[] args) {
+                System.out.println(A.id); //10
+                System.out.println(A.name); //mike
+            }
+        } 
+
+
+--------------------------------------------------------------------------------------------
+#Note: Inside interface we can crete:
+    - main method
+    - static complete methods    
+    - Because we can create main method in interface, we can run interface as well.   
+
+    - Ex:
+        package p1;
+        public interface A{
+            public static void main (String[] args){
+                //No Error
+                A.test1(); 
+            } 
+            
+            public static void test(); //Error: Incomplete 'static method' is not allowed  
+            
+            public static void test1(){
+                S.o.p(100);
+            }  
+            
+        }
+      
+
+--------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

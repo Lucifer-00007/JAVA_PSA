@@ -19,9 +19,15 @@ An example:
     
     }
 
+--------------------------------------------------------------------------------------------
+#Class: 
+    - Class is a blueprint where object is created.
+    - Class creates an object when it receives a request from the new keyword. 
 
 
-
+#Object:
+    - Object is the instance of a class.  
+    - Object is a real-world entity that has state and behaviour.
 
 
 

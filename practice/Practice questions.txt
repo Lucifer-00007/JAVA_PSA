@@ -1,0 +1,24 @@
+*- What is constructor chaining?
+
+- Define class and object. WAP 
+
+- Define Static, non-static, local variables. WAP 
+
+- Define constructor. WAP to print 'Hello world' from constructor.
+
+- Define constructor overloading. WAP.
+
+- Define default constructor. Define
+
+- Define data hiding.
+
+- Define marker interface.
+
+- Can we do multiple inheritance on functional interface?
+    - No, since 'functional interface' allows only one abstract class.
+
+
+
+
+
+
