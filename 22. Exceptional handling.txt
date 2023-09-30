@@ -1,0 +1,188 @@
+#Exceptional Handling in JAVA.
+    - Unexpected events that halts the execution program of abruptly are called 'Exceptions'.  
+
+
+---------------------------------------------------------------------------------------------
+Type1:
+    package p1;
+    public class A{
+        psvm(){
+            int x = 10; 
+            int y = 0; 
+            int z = x/y; //Error, and code run stops here.
+            S.o.p("Welcome");
+        }
+    }
+
+
+---------------------------------------------------------------------------------------------
+Type2:
+    package p1;
+    public class A{
+        psvm(){
+            try {
+                int x = 10; 
+                int y = 0; 
+                int z = x/y; //Error, but code runs after 'catch' block stops here.
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+            
+            S.o.p("Welcome");  //Welcome
+        }
+    }
+
+
+---------------------------------------------------------------------------------------------
+# Types of Exceptions:
+    - Checked Exception                |    - Unchecked Exception
+    -------------------------------------------------------------------------
+    - Compile Time Exception           |    - Runtime Exception 
+    -------------------------------------------------------------------------                                 
+    - Error occurred during conversion |    - Error occurred during running            
+      of "A.java" to "A.class" is      |      "A.class" file is called
+      called "Checked Exception" or    |      'Unchecked Exception' or 'Runtime Exception'.
+      "Compile Time Exception".        |
+    --------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+# Tree
+
+#Throwable
+    -> Error
+    
+    -> Exception
+        -> Checked Exception
+            - ClassNotFoundException 
+            - IOException 
+            - SQLException 
+            - FileNotFoundException
+        
+        -> Unchecked Exception
+            - ArithmeticException
+            - ClassCastException
+            - NullPointerException
+            - ArrayIndexOutOfBoundsException
+            - NumberFormatException   
+
+
+---------------------------------------------------------------------------------------------
+#ArithmeticException Class:
+    - It represents an exception that is thrown when an arithmetic operation in JAVA encounters an error.
+    - 'ArithmeticException' class is sub-class of 'RuntimeException' class.
+    - Ex: 
+        package p1;
+        public class A{
+            psvm(){
+                try {
+                    int x = 10;
+                    int y = 0;
+                    int z = x/y; //Error: ArithmeticException 
+                    S.o.p(z);
+
+                }catch(ArithmeticException e){
+                    e.printStackTrace();
+                }
+                S.o.p("Welcome");    
+            }
+
+        }
+
+
+---------------------------------------------------------------------------------------------
+#NullPointerException class:
+    - When we access non static variables with 'null reference variables' we get null pointer exception.  
+    - Ex:
+        package p1;
+        public class A{
+            int x = 10;
+            psvm(){
+                try {
+                    A a1 = null;
+                    S.o.p(a1.x);
+
+                }catch(NullPointerException e){
+                    e.printStackTrace();
+                }
+                S.o.p("Welcome");    
+            }
+        }        
+
+
+
+---------------------------------------------------------------------------------------------
+#Note: If we want to convert string to an integer, we can use 'wrapper class' 'Integer.parseInt()'.
+    - Ex1(string to Integer):
+        public class A{
+            psvm(){
+                String x = "100";
+                int y = Integer.parseInt(x); // converting string to integer.
+                S.o.p(y); //100
+            }
+        }
+
+    - Ex2(String to float):
+        public class A{
+            psvm(){
+                String x = "100.3";
+                float y = Float.parseFloat(x); // converting string to float.
+                S.o.p(y); //100.3
+            }
+        }
+
+    - Ex3(String to boolean):
+        public class A{
+            psvm(){
+                String x1 = "true";
+                String x2 = "false";
+                String x3 = "jhmnbnb";
+                
+                boolean y1 = Boolean.parseBoolean(x1); // converting string to boolean.
+                boolean y2 = Boolean.parseBoolean(x2); // converting string to boolean.
+                boolean y3 = Boolean.parseBoolean(x3); // converting string to boolean.
+                
+                S.o.p(y1); //true
+                S.o.p(y2); //false
+                S.o.p(y3); //false , anything other than 'true' string will get convert to false. 
+            }
+        }
+
+
+---------------------------------------------------------------------------------------------
+#NumberFormatException class:
+    - 
+    - Ex:
+        package p1;
+        public class A{
+            psvm(){
+                try {
+                    String a = "mghmg";
+                    int b = Integer.parseInt(a); //Error: since we are trying to convert 'non-number string' to integer.  
+
+                }catch(NumberFormatException e){
+                    e.printStackTrace();
+                }
+                S.o.p("Welcome");    
+            }
+        }        
+
+
+---------------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

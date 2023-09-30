@@ -14,6 +14,171 @@
 
 8. WAP to create a method that cannot return a value but can print "Hello, world". 
 
+9. Create an interface with one incomplete & 1 complete method & implement that in a class without lambdas expression.
+->
+    package p1;
+    public interface A{
+        public void test();
+        default void test1(){
+            S.o.p("from test1")
+        };
+    }
+
+    public class B implements A{
+        @Override
+        void test(){
+            S.o.p("from test")
+        }
+
+        psvm(){
+            B b1 = new B();
+            b1.test();
+            b1.test1();
+        }
+    }
+
+10. Create an interface with one incomplete & 1 complete method & implement that in a class using lambdas expression.
+->
+    package p1;
+    public interface A{
+        public void test1();
+        default void test2(){
+            S.o.p("from test1")
+        };
+    }
+
+    public class B {
+        psvm(){
+            A a1 = () -> S.o.p("from test1")
+            a1.test1();
+            a1.test2();
+        }
+    }
+
+11. Perform Add, Sub, Multiply and divide with lambda expression:
+->
+    public interface A{
+        int test(int x, int y);
+    }
+
+    public class B{
+        A a1 = (int a, int b) -> return a+b; 
+        A a2 = (int a, int b) -> return a-b; 
+        A a3 = (int a, int b) -> return a*b; 
+        A a4 = (int a, int b) -> return a/b; 
+
+        int val1 = a1.test(10, 20);
+        int val2 = a2.test(10, 20);
+        int val3 = a3.test(10, 20);
+        int val4 = a4.test(10, 20);
+
+        S.o.p(val1); //30
+        S.o.p(val2); //-10
+        S.o.p(val3); //200
+        S.o.p(val4); //0.5
+    }
+
+12. WAP to sort an array.
+->  //Using bubble sort 
+
+    public package p1;
+    public class A{
+        psvm(){
+            int[] x = {7, 10, 2, 9, 19, 5};
+            for(int i=0; i<x.length-1; i++){
+                for(int j=0; j<x.length -1; j++){
+                    if(x[j] > x[j+1]){
+                        int temp = x[j];
+                        x[j] = x[j+1];
+                        x[j+1] = temp;
+                    }
+                }
+            }
+
+            for(int arr: x){
+                S.o.p(arr);
+            }  
+        }
+    }
+
+13. WAP to remove duplicate elements:
+->
+    public package p1;
+    public class A {
+        psvm(){
+            int[] x = {1,1,1,2,2,3,4,4,5};
+            int[] y = new int[x.length];
+            int j = 0;    
+            for(int i=0; i<x.length-1; i++){
+                if(x[i]!=x[i+1]){
+                    y[j] = x[i];
+                    j++;
+                }
+            }
+            y[j] = x[x.length-1]; //insert last element(ie. '5' here)
+
+            for(int arr: y){
+                System.out.println(arr);
+            }
+
+        }
+    }
+
+
+14. WAP to print the number 'a' has occurred in "madam".
+->
+    public package p1;
+    public class A {
+        psvm(){
+            String str = "madam";
+            int count=0;
+            for(int i=0; i < str.length(); i++){
+                if(str.charAt(i) == 'a'){
+                    count++;   
+                }
+            }
+            System.out.print(count);
+        }
+    } 
+
+
+14. WAP to reverse the string "mike".
+->
+    public package p1;
+    public class A {
+        psvm(){
+            String str = "mike";
+            for(int i = str.length()-1 ; i >= 0; i--){
+                System.out.print(str.charAt(i));
+            }
+        }
+    } 
+
+
+14. WAP to print the number of words in a sentence.
+->
+    public package p1;
+    public class A {
+        psvm(){
+            String str = "my name is mike";
+            String[] data = str.split(" ");
+            System.out.print(data.length);
+        }
+    } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

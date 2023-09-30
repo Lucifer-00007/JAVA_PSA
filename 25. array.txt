@@ -1,0 +1,200 @@
+#Array:
+    - Array is a collection of data.
+
+    - Ex1: 
+        public class A{
+            psvm(){
+                int[] x = new int[3];
+                x[0] = 10;
+                x[1] = 20;
+                x[2] = 30;
+
+                for (int i = 0; i < x.length; i++){
+                    S.o.p(x[i]); // 10 20 30
+                }
+            }
+        }
+
+
+    - Note: if we don't initialize any value to an array index it will take the default value of the data type.   
+    - Ex2: 
+        public class A{
+            psvm(){
+                int[] x = new int[5];
+                x[0] = 10;
+                x[1] = 20;
+                x[2] = 30;
+
+                for (int i = 0; i < x.length; i++){
+                    S.o.p(x[i]); // 10 20 30 0 0, Since we don't initialize any value to x[3], x[4] thus it automatically takes the "default value of integer" ie '0'
+                }
+            }
+        }
+
+
+    - Ex3: 
+        public class A{
+            psvm(){
+                String[] x = new String[5];
+                x[0] = "Ram";
+                x[1] = "Sham";
+                x[2] = "Tom";
+
+                for (String i = 0; i < x.length; i++){
+                    S.o.p(x[i]); // "Ram" "Sham" "Tom" Null Null, Since we don't initialize any value to x[3], x[4] thus it automatically takes the "default value of String" ie 'Null'
+                }
+            }
+        }
+
+
+------------------------------------------------------------------------------------
+# Dynamic Array
+    - Array whose length can vary according to the given number of items.
+    - Ex1: 
+        public class A{
+            psvm(){
+                int[] x = {10, 20, 30, 40, 50, 60,}; //dynamic array
+
+                for (int i = 0; i < x.length; i++){
+                    S.o.p(x[i]); // 10 20 30
+                    if(x[i]>x[i+1]){
+                        x[i] = x[i+1];
+                    }
+                }
+            }
+        }
+
+
+------------------------------------------------------------------------------------
+#2d-Arrays:
+    - It is formed by combination of rows*columns.  
+    Ex1:
+        package p1;
+        public class A{
+            psvm(){
+                int[][] arr = new int[2][3]; //here we create a 2d array with '2 rows' and '3 columns'
+                
+                S.o.p(arr.length);    //gives the length of rows ie: 2  
+                S.o.p(arr[1].length); //gives the length of columns ie: 3
+            }
+        } 
+
+
+    Ex2(create a 2d array and print the values in it) :
+        package p1;
+        public class A{
+            psvm(){
+                int[][] arr = new int[2][3]; //here we create a 2d array with '2 rows' and '3 columns'
+                
+                arr[0][0] = 1;
+                arr[0][1] = 2;
+                arr[0][2] = 3;
+                
+                arr[1][0] = 4;
+                arr[1][1] = 5;
+                arr[1][2] = 6;
+
+                for(int i = 0; i < arr.length; i++){
+                    for (int j: arr[i]){
+                        System.out.println(j);
+                    }
+                }
+            }
+        } 
+
+
+    Ex3 (create a 3*3 2d array and add the diagonal elements):
+
+        //method1: (using 2 "for loops")
+        package p1;
+        public class A{
+            psvm(){
+                int[][] arr = new int[3][3]; //here we create a 2d array with '2 rows' and '3 columns'
+                
+                //First row
+                arr[0][0] = 1;
+                arr[0][1] = 2;
+                arr[0][2] = 3;
+                
+                //Second row
+                arr[1][0] = 4;
+                arr[1][1] = 5;
+                arr[1][2] = 6;
+                
+                //Third row
+                arr[2][0] = 7;
+                arr[2][1] = 8;
+                arr[2][2] = 9;
+
+                int count = 0;
+                for(int i = 0; i < arr.length; i++){
+                    for (int j=0; j < arr[0].length; j++){
+                        if(i == j){
+                            count += arr[i][j];
+                        }
+                    }
+                }
+                S.o.p(count);
+            }
+        } 
+
+
+
+        //method2: (using 1 "for loop")
+        package p1;
+        public class A{
+            psvm(){
+                int[][] arr = new int[3][3]; //here we create a 2d array with '2 rows' and '3 columns'
+                
+                //First row
+                arr[0][0] = 1;
+                arr[0][1] = 2;
+                arr[0][2] = 3;
+                
+                //Second row
+                arr[1][0] = 4;
+                arr[1][1] = 5;
+                arr[1][2] = 6;
+                
+                //Third row
+                arr[2][0] = 7;
+                arr[2][1] = 8;
+                arr[2][2] = 9;
+
+                int count = 0;
+                for(int i = 0; i < arr.length; i++){
+                    count += arr[i][j];
+                    S.o.p(count);
+                }
+            }
+        } 
+
+    Ex4:
+    WAP to do the following: 
+    given int[] x= {1,2,3,4,5};
+    
+    if k= 2
+    output: {4,5,1,2,3}    
+
+    if k= 3
+    output: {3,4,5,1,2}
+
+    
+
+
+
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+

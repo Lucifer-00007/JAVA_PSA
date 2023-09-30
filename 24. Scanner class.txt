@@ -1,0 +1,41 @@
+# Scanner class:
+    - It is used to take user input.
+
+    - Ex1 (note: "scan.next()" will only read the "first word" input by user):
+        package p1;
+        public class A{
+            psvm(){
+                Scanner scan = new Scanner(System.in); //taking user input
+                S.o.p("Enter your name:");
+                String name = scan.next(); //storing user input
+                S.o.p("Your name is: "+name);
+                scan.close();
+            }
+        }    
+
+
+    - Ex2 (note: "scan.nextLine()" will only read "whole-line" input by user):
+        package p1;
+        public class A{
+            psvm(){
+                Scanner scan = new Scanner(System.in); //taking user input
+                S.o.p("Enter your name:");
+                String name = scan.nextLine(); //storing user input
+                S.o.p("Your name is: "+name);
+                scan.close();
+            }
+        }    
+
+
+
+
+
+
+
+
+
+
+
+
+
+        

@@ -17,7 +17,7 @@
 - Can we do multiple inheritance on functional interface?
     - No, since 'functional interface' allows only one abstract class.
 
-
+- How to convert string to integer? 
 
 
 

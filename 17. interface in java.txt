@@ -171,6 +171,20 @@ Interface                                    | Class
       
 
 --------------------------------------------------------------------------------------------
+#Note: We cannot create 'object'(instance) from an interface:
+    - Ex:
+        package p1;
+        public interface A{
+            public void test();   
+        }
+
+        package p1;
+        public class B {
+            psvm(){
+                A a1 = new A(); //Error: since we cannot create 'object'(instance) from an interface 
+            }     
+            
+        }
 
 
 --------------------------------------------------------------------------------------------

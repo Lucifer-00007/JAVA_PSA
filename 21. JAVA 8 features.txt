@@ -136,12 +136,116 @@ Note: In versions 8 complete 'main method' is allowed in interface, but incomple
                 }
             }    
 
-    - 
-
 
 -------------------------------------------------------------------------------------------
 #Lambdas expression.
+    - It was introduced in version 8 of java.
+    - It reduces the number of code.
+    - Functional programming can be implemented with 'lambdas expression'. 
+    - It is only applicable if if the 'parents class interface' has only one abstract method, ie. parent interface should be 'functional interface'.  
+    - Ex1: 
+        package p1;
+        public interface A{
+            public void test();
 
+            public void test1(); //Error: since multiple incomplete methods 
+        }
+
+        package p1;
+        public class B{
+            psvm(){
+                // overwrites the method in 'interface A'
+                A a1 = () -> {
+                    S.o.p(100);
+                };
+                S.o.p(a1);  // address of 'class B' 
+                a1.test();  //100 
+            }
+        }
+
+
+    - Ex2: 
+        package p1;
+        @FunctionalInterface  
+        public interface A{
+            public void test(int x);
+        }
+
+        package p1;
+        public class B{
+            psvm(){
+                A a1 = (int x) -> {
+                    S.o.p("From test method");
+                    S.o.p(x);
+                };
+                a1.test(500);  
+            }
+        }
+
+    - Ex3: 
+        package p1;
+        @FunctionalInterface  
+        public interface A{
+            public void test(int x, int y);
+            
+            default void test1(){
+                S.o.p(3000);
+            } 
+        }
+
+        package p1;
+        public class B{
+            psvm(){
+                A a1 = (int a, int b) -> {
+                    S.o.p(a);
+                    S.o.p(b);
+                };
+                a1.test(500, 600);  
+                a1.test1();  
+            }
+        }
+
+
+    - Ex4 (We can remove curly-brackets in lambdas expression is there is only a single code): 
+        package p1;
+        @FunctionalInterface  
+        public interface A{
+            public void test();
+        }
+
+        package p1;
+        public class B{
+            psvm(){
+            
+                A a1 = () -> S.o.p(100); //one line of code with curly-braces.
+            
+            }
+        }
+    
+
+    - Ex5 (Math Operations):
+        package p1;
+        @FunctionalInterface  
+        public interface MathOperation{
+            int operate(int a, int b);
+        }
+
+        package p1;
+        public class B{
+            psvm(){
+                MathOperation op1 = (int a, int b) -> return a+b; 
+                int val1 = op1.operate(10, 20);
+                S.o.p(val1);  //30 
+                
+                MathOperation op2 = (int a, int b) -> return a-b; 
+                int val2 = op1.operate(10, 20);
+                S.o.p(val2);  //-10 
+                
+                MathOperation op3 = (int a, int b) -> return a*b; 
+                int val3 = op3.operate(10, 20);
+                S.o.p(val3);  //200
+            }
+        }
 
 -------------------------------------------------------------------------------------------
 #Optional class.

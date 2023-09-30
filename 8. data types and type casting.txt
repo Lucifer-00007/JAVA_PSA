@@ -33,6 +33,8 @@ ________________________________________________________________________________
 #Type Casting:
 - Converting a particular date type into required data type is called as typecasting.
 - Type casting is of 2 types:
+    
+    ------------------------------------------------------------
     - Auto up-casting.
         - Converting smaller data type into bigger data type without any loss of data is called as auto up-casting.
         - Ex: 
@@ -59,6 +61,7 @@ ________________________________________________________________________________
                 }
             }    
 
+    ------------------------------------------------------------
     - Explicit down-casting.
         - Converting bigger data type to smaller data type is called as explicit down-casting.
         - Ex1:
@@ -112,7 +115,57 @@ ________________________________________________________________________________
                 }
             }
 
+______________________________________________________________________________________________________
+#Note: Class up-casting:
+    - When a "child class object's address" is stored in 'parent class references variable' it is called "Class up-casting".
+    - After 'Class up-casting' the 'references variable' of 'parent class' becomes 'loosely-coupled'(flexible). 
+    - Ex:
+        package p1;
+        public class A{
+        }
+
+        package p1;
+        public class B extends A{
+            psvm(){
+                A a1 = new B(); //class up-casting
+                S.o.p(a1);     //address of object 'B()'
+
+                a1 = new C(); //a1 is 'loosely-coupled', thus 'a1' value can be re-assigned. 
+                S.o.p(a1);   //address of object 'C()'
+            } 
+        }
+
+        package p1;
+        public class C extends A{
+        }
 
 
+______________________________________________________________________________________________________
+#Note: Class down-casting:
+    - When a "parent class object's address" is stored in 'child class references variable' it is called "Class down-casting". 
+    - Ex:
+        package p1;
+        public class A{
+        }
 
+        package p1;
+        public class B extends A{
+            psvm(){
+                B b1 = (B)new A(); //class down-casting
+                S.o.p(b1);
+
+                C c1 = (C)new A(); //class down-casting
+                S.o.p(a1);  
+            } 
+        }
+
+        package p1;
+        public class C extends A{
+        }
+
+
+______________________________________________________________________________________________________
+
+
+______________________________________________________________________________________________________
 
