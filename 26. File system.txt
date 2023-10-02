@@ -1,0 +1,24 @@
+# File-System:
+    -> File
+    -> FileReader
+    -> FileWriter
+    -> BufferReader
+    -> BufferWriter
+    -> FileInputStream
+    -> FileOutputStream
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

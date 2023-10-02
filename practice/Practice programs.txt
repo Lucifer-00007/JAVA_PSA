@@ -167,12 +167,112 @@
     } 
 
 
+15.WAP to create a 3*3 2d array, add the diagonal elements and print the value.
+
+
+16. WAP to do the following: 
+    given int[] x= {1,2,3,4,5};
+    
+    if k= 2
+    output: {4,5,1,2,3}    
+
+    if k= 3
+    output: {3,4,5,1,2}
+
+-> 
+    import java.util.Scanner; //importing scanner class.
+    package p1;
+    public class A{
+        psvm(){
+            int[] x = {10, 20, 30, 40, 50, 60, 70};
+            int n =  x.length;
+            int[] y = new int[n];
+
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Enter a number between 0 and 5: ");
+            int z = scan.nextInt(); //Since we are taking integer input. 
+
+            for(int i = 0; i < n; i++){
+                y[(i+z) % n] = x[i];
+            }
+
+            for(int arr: y){
+                System.out.println(arr);
+            }     
+        }
+    }
 
 
 
+17. WAP to check if the string is palindrome or not.
+->  //Method1 (check palindrome by reversing the string and match):
+    public class A{    
+        psvm(){
+            String x = "madam";
+            String y = "";
+            for(int i=x.length()-1; i>=0; i--){
+                y+=x.charAt(i);
+            }
+            
+            if(x.equals(y)){      //In string we cannot directly compare like "x==y" 
+                System.out.println("palindrom");
+            }else{
+                System.out.println("Not palindrom");
+            }
+        }     
+    }
 
 
+    //Method2 (iterating through each letter and matching simultaneously using while loop):
+    public class A{
+        psvm(){
+            String s = "madam";
+            int left = 0;
+            int right = s.length();
+            
+            while (left < right){
+                if(s.charAt(left) != s.charAt(right)){
+                    return false;
+                }
+                left++;
+                right--;
+            }
+            return true;
+        }
+    }
 
+
+18. WAP to check if prime number or not.
+-> 
+    import java.util.Scanner;
+    package p1;
+    public class A{
+        psvm(){
+            Scanner scan = new Scanner(System.in);
+            System.out.print("Enter a number: ");
+            int x = scan.nextInt();
+
+            if(x == 1 || x == 0){
+                System.out.println("Not prime number!");
+                return;
+            }
+
+            if(x == 2 || x == 3 || x == 5 || x == 7){
+                System.out.println("Prime number!");
+                return;
+            }
+
+            int i = 2;    
+            while(i < x){
+                if( x % i == 0){
+                    System.out.println("Not prime number!");
+                    return;
+                }
+                i++;
+            }
+            System.out.println("Prime number!");
+        }
+    }   
 
 
 

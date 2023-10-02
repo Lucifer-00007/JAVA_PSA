@@ -2,6 +2,7 @@
     - It is used to take user input.
 
     - Ex1 (note: "scan.next()" will only read the "first word" input by user):
+        import java.util.Scanner;  //importing scanner class.
         package p1;
         public class A{
             psvm(){
@@ -15,6 +16,7 @@
 
 
     - Ex2 (note: "scan.nextLine()" will only read "whole-line" input by user):
+        import java.util.Scanner;  //importing scanner class.
         package p1;
         public class A{
             psvm(){

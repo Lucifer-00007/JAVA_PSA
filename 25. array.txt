@@ -169,6 +169,7 @@
             }
         } 
 
+
     Ex4:
     WAP to do the following: 
     given int[] x= {1,2,3,4,5};
