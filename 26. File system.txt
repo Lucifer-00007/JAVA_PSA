@@ -7,6 +7,7 @@
     -> FileInputStream
     -> FileOutputStream
 
+
 -----------------------------------------------------------------------------------------
 # File:
     - First create a file "A.txt" in the project directory.
@@ -297,8 +298,71 @@
 #Notes: Serialization and deserialization
     - Check 'Serialization and deserialization.txt' file
 
-    
+
+
 -----------------------------------------------------------------------------------------
+#BufferReader:
+    - It reduces the number of I/O operations and improves performance.
+    - Can read the content line by line.
+
+    Ex: 
+        package p1;
+        import java.io.BufferedReader;
+        import java.io.FileReader;
+
+        public class A{
+            public static void main(String[] args) {
+                try{
+                    FileReader fr = new FileReader("H:\\JAVA_PSA\\A.txt");
+                    BufferedReader br = new BufferedReader(fr);
+                    
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        System.out.println(line);
+                    }
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+
+-----------------------------------------------------------------------------------------
+#BufferWriter:
+    - It reduces the number of I/O operations and improves performance.
+    - newLine() method is used to write content in the next line of the file.
+
+    Ex: 
+        package p1;
+        import java.io.BufferedWriter;
+        import java.io.FileWriter;
+
+        public class A{
+            public static void main(String[] args) {
+                try{
+                    FileWriter fw = new FileWriter("H:\\JAVA_PSA\\A.txt");
+                    BufferedWriter bw = new BufferedWriter(fw);
+                    
+                    bw.write('this is first line');  
+                    bw.newLine();  
+                    bw.write('this is second line');  
+                    bw.newLine();  
+                    Char[] ch = {'x', 'y', 'z'};
+                    bw.write(ch);
+
+                    bw.close();
+                    fw.close();
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+
+
+
 
 -----------------------------------------------------------------------------------------
 

@@ -1,0 +1,22 @@
+# Shorcuts:
+    - ctrl + 1 > assign statement to new local variable  ---> Set new local variable
+
+    - Type 'main' > ctrl + Space > Enter ---> Gives 'pubic static void main(String[] args)' automatically.  
+
+    - Type 'syso' > ctrl + Space > enter ---> Gives 'System.out.println()' automatically.  
+    
+    - ctrl + 1 > select your choice ---> Fix any error automatically in eclipse.  
+
+    - ctrl + shift + f ---> Format document. 
+
+    - ctrl + d ---> Delete line. 
+
+    - ctrl + alt + up/down arrow-key ---> Duplicate line. 
+
+
+-------------------------------------------------------------------------------------------
+# Create a New Project:
+    - File > New > Project > Select "Java Project" & click Next
+    - Give "your project name" > In JRE Select "Use a project specific JRE" as "1.8.0_351"
+    - Click "Finish"
+

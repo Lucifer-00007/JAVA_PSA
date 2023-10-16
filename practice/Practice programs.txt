@@ -275,12 +275,69 @@
     }   
 
 
+19. WAP to count the number of characters of the content of a file 'A.txt' having "Hello World".
+->  
+    package p1;
+    import java.io.File;
+    public class A{
+        public static void main(String[] args){
+            try {
+                File fr = new file("path/to/A.txt");
+                long val = fr.length();
+                System.out.println(val);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
 
 
+20. Use Scanner class to take input and write it to a text file.
+-> 
+    package app_java_8;
+    import java.io.FileWriter;
+    import java.util.Scanner;
+    public class A {
+        public static void main(String[] args) {
+            try {
+                Scanner scan = new Scanner(System.in);
+                System.out.print("Enter your text: ");
+                String userText = scan.nextLine();
+                scan.close();			
+            
+                FileWriter fw = new FileWriter("H:\\JAVA_PSA\\eclipse-workspace\\app_java_8\\src\\app_java_8\\log.txt");
+                fw.write(userText);
+                fw.flush();
+                fw.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 
+20. WAP to copy the content of a.txt to b.txt.
+-> 
+    package app_java_8;
+    import java.io.FileWriter;
+    import java.io.FileReader;
+    import java.io.BufferedReader;
+    public class A {
+        public static void main(String[] args) {
+            try {
+                FileReader fr = new FileReader("H:\\JAVA_PSA\\eclipse-workspace\\app_java_8\\src\\app_java_8\\a.txt");
+                BufferedReader br = new BufferedReader(fr);
+                String content = br.readLine();
 
-
+                FileWriter fw = new FileWriter("H:\\JAVA_PSA\\eclipse-workspace\\app_java_8\\src\\app_java_8\\b.txt", true);
+                fw.write(content);
+                fw.flush();
+                fw.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 
 
