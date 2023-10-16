@@ -19,6 +19,7 @@
 - [./24. Scanner class.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/24.%20Scanner%20class.txt)
 - [./25. array.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/25.%20array.txt)
 - [./26. File system.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/26.%20File%20system.txt)
+- [./27. Serialization and Deserialization.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/27.%20Serialization%20and%20Deserialization.txt)
 - [./3. memory management.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/3.%20memory%20management.txt)
 - [./4. method.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/4.%20method.txt)
 - [./5. types of variables.txt](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/5.%20types%20of%20variables.txt)
