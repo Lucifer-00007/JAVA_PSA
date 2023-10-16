@@ -1,0 +1,92 @@
+#Serialization:
+    - Converts an object's address into a stream of bytes.
+    - Now we save the binary(ie. combination of  0 & 1) data to a file.
+    - It Requires the object's class to "implement the Serializable interface".
+    - Java provides built-in classes like "ObjectOutputStream" for this purpose.
+
+    Ex:
+        package p1;
+        import java.io.Serializable;
+
+        public class A implements Serializable {
+            String name = "Harry";
+        }
+
+
+        package p1;
+        import java.io.FileOutputStream;
+        import java.io.ObjectOutputStream;
+
+        public class B {
+            public static void main(String[] args) {
+                try{
+                    FileOutputStream fos = new FileOutputStream("H:\\JAVA_PSA\\d.ser");
+                    A a1 = new A();
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject();
+                    oos.close();
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        
+------------------------------------------------------------------------------------
+#Deserialization:
+    - Reconstructs an object's address from a stream of bytes.
+    - Requires the object's class to implement the 'Serializable interface'.
+    - Java provides built-in classes like 'ObjectInputStream' for this purpose.
+    - The deserialized object should match the class used for serialization.
+
+    Ex:
+        package p1;
+        import java.io.Serializable;
+
+        public class A implements Serializable {
+            String name = "Harry";
+        }
+
+
+        package p1;
+        import java.io.FileInputStream;
+        import java.io.ObjectInputStream;
+
+        public class C {
+            public static void main(String[] args) {
+                try{
+                    FileInputStream fos = new FileInputStream("H:\\JAVA_PSA\\d.ser");
+                    ObjectInputStream ois = new ObjectInputStream(fos);
+                    
+                    A a1 =  (A)ois.readObject();
+                    S.o.p(a1.name);
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+
+------------------------------------------------------------------------------------
+Note:
+    - The super-most class is JAVA is 'object'(ie. 'java.lang.object') class.
+    - ie. whatever class we create are by default a subclass of 'object'.
+    - Thus everything in JAVA is  sub class of 'java.lang.Object' class.   
+
+
+------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
