@@ -1,4 +1,4 @@
-# 'this' keyword (just like reference variable in:  'A a1 = new A()'):
+# 'this' keyword (just like reference variable "a1" in:  'A a1 = new A()'):
 
 -> Some General Properties of 'this' keyword:   
     - 'this' keyword is a special reference variable that automatically get's created  to store object's address.  

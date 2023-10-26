@@ -1,0 +1,263 @@
+#Some Common "String" interview questions:
+last class: 29/10/20 - part2
+
+1. Reverse the given String.
+->
+    Ex: 
+        public class A{
+            psvm(){
+                String str = "Welcome";
+                
+                for (int i = str.length()-1; i>=0; i--) {
+                    System.out.print(str.charAt(i));
+                }
+            }
+        }
+
+
+
+2. Count the no. of words in the given String.
+->
+    Ex: 
+        public class A{
+            psvm(){
+                String str = "Welcome to this world";
+                String[] wordsArr = str.trim().split(" ");
+                int noOfWords = wordsArr.length;
+                System.out.println(noOfWords);
+            }
+        }
+
+
+
+3. Check if the no. of '(' is equal to ')' or not in "((()))".
+->
+    Ex: 
+        public class A{
+            psvm(){
+                String str = "((()))";
+                int openBracket = 0;
+                int closeBracket = 0;
+                for(int i =0; i<str.length(); i++){
+                    if(str.charAt(i)=='('){
+                        openBracket++;
+                    }
+                    if(str.charAt(i)==')'){
+                        closeBracket++;
+                    }
+                }
+            
+                if(openBracket == closeBracket){
+                    System.out.println("Equal");
+                }else {
+                    System.out.println("Not Equal");
+                }
+            }
+        }
+
+
+
+4. WAP to create a square:
+->
+    Ex: 
+        public class A{
+            psvm(){
+                int squarelen = 5;
+                for(int i=0; i<squarelen; i++){
+                    for(int j=0; j<squarelen; j++){
+                        System.out.print("*");
+                    }
+                    System.out.println("");
+                }
+            }
+        }
+
+
+
+5. WAP to create different types of triangles:
+->
+    Ex1 (Right Angle Triangle): 
+        public class A{
+            psvm(){
+                int triangleLen = 5;
+                for(int i=0; i<triangleLen; i++){
+                    for(int j=0; j<=i; j++){
+                        System.out.print("*");
+                    }
+                    System.out.println("");
+                }
+            }
+        }
+
+    Ex2 (Inverted Right Angle Triangle): 
+        public class MyClass {
+            public static void main(String args[]) {
+                int triangleLen = 5;
+                for(int i=0; i<triangleLen; i++){
+                    for(int j=triangleLen; j>i; j--){
+                        System.out.print("*");
+                    }
+                    System.out.println("");
+                }
+            }
+        }
+
+
+
+-----------------------------------------------------------------------------------------------
+#Mutable & Immutable class:
+
+
+#Mutable: Mutable is something where the class's object property keeps on changing.
+
+
+
+#Immutable: Once Immutable class's object is created it's state cannot be altered.
+    -> Steps to create an immutable class:
+        - Create a final class.
+        - Set the value of the properties using constructors only.
+        - Make the properties final.
+        - Do not provide any setters for these properties. 
+
+    Ex: 
+        final public class A{
+            private final int age;
+            private final String name;
+            
+            public A(int age, String name){
+                this.age = age;
+                this.name = name;
+            }
+
+            public int getAge(){
+                return age;
+            }
+
+            public int getName(){
+                return name;
+            }
+
+            public static void main(String[] args){
+                A a1 = new A(20, 'Ani');
+            }
+        }
+
+
+
+-----------------------------------------------------------------------------------------------
+#Compare Strings:
+    - Ex1(Here using "new" keyword we are creating separate objects for "s1" and "s2" with different addresses for each):
+        
+        public class A{
+            psvm(){
+                String s1 = new String("Test");
+                String s2 = new String("Test");
+
+                System.out.println(s1 == s2); //false
+                System.out.println(s1.equals(s2)); //true
+            }
+        }
+
+
+    - Ex2(When value is same and we are not using the "new" keyword, then "s1" & "s2" will point to the same object's address):
+        
+        public class A{
+            psvm(){
+                String s1 = "Test";
+                String s2 = "Test";
+
+                System.out.println(s1 == s2); //true
+                System.out.println(s1.equals(s2)); //true
+            }
+        }
+
+
+    - Ex3(When value is same but syntax is different, then "s1" & "s2" will not point to the same object's address):
+        
+        public class A{
+            psvm(){
+                String s1 = new String("Test");
+                String s2 = "Test";
+
+                System.out.println(s1 == s2); //false
+                System.out.println(s1.equals(s2)); //true
+            }
+        }
+
+
+-----------------------------------------------------------------------------------------------
+Note: "String" class is immutable but we can change it's reference to the value.
+    Ex:
+        public class A{
+            psvm(){
+                String s1 = "xyz"; //Initially "s1" is pointing to an object with value "xyz". 
+                s1 = "abc";        //Now "s1" is pointing to another object with value "abc".
+                s1 = "ijk";        //Now "s1" is pointing to another object with value "ijk".
+                System.out.println(s1);  // ijk
+            }
+        }
+
+
+-----------------------------------------------------------------------------------------------
+#toUpperCase() and toLowerCase() methods:
+->
+    Ex:
+        public class A{
+            psvm(){
+                String s1 = "A Quick Brown Fox Jumps Over The Lazy Dog";
+                String up = s1.toUpperCase();
+                String low = s1.toLowerCase();
+
+                System.out.println(up);  //A QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+                System.out.println(low); //a quick brown fox jumps over the lazy dog
+            }
+        }
+
+
+
+-----------------------------------------------------------------------------------------------
+#startsWith() & endsWith()
+-> 
+    Ex:
+        public class A{
+            psvm(){
+                String s1 = "welcome";
+                System.out.println(s1.startsWith("w"));  //true
+                System.out.println(s1.endsWith("c")); //false
+            }
+        }
+
+
+-----------------------------------------------------------------------------------------------
+#String.valueof():
+    -> It converts the given type such as "int", "float", "double", "long",  "boolean", "char" and "char-array" into "String"
+    
+    Ex:
+        public class A{
+            psvm(){
+                int s1 = 10;
+                double s2 = 10.5;
+                boolean s3 = true;
+                char s4 = 'x';
+                char[] s5 = {'a', 'b', 'c', 'd', 'e'};
+                
+                String str1 = String.valueOf(s1);
+                String str2 = String.valueOf(s2);
+                String str3 = String.valueOf(s3);
+                String str4 = String.valueOf(s4);
+                String str5 = String.valueOf(s5);
+
+                System.out.println(str1); //10
+                System.out.println(str2); //10.5
+                System.out.println(str3); //true
+                System.out.println(str4); //x
+                System.out.println(str5); //abcde
+            }
+        }
+
+
+
+
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------

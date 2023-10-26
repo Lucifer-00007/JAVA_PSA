@@ -1,0 +1,25 @@
+# Enum:
+    - It is a collection of constants.
+
+Ex1: 
+    package p1;
+    public enum Calendar{
+        Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
+    }
+
+
+    package p1;
+    public class A{
+        public static void main(String[] args) {
+            System.out.println(Calendar.Oct);  //October
+        }
+    }
+
+
+
+
+
+
+
+
+

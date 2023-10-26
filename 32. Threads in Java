@@ -1,0 +1,321 @@
+# Threads in JAVA:
+    - Multitasking done at program level is called as Threads.
+    - The main purpose of "threads" is to improve the performance of the application by reducing the execution time.
+
+
+--------------------------------------------------------------------------------------
+# An example reference for threads:
+    - Assume we need to find a file "test.txt" and we have 3 drive in the system ie. "drive C", "drive D" and "drive E".
+        -> First Approach (Without using Threads):
+            - Now if "our-search-program" runs sequentially, like: first we find in "C Drive", then "D Drive" and at the end we find in "E Drive".
+            - In will take a lot of time if the file is present in "E Drive".
+
+        -> Second Approach (Using Threads):
+            - Now "our-search-program" simultaneously searches "test.txt" in "C", "D" and "E" drive.
+            - This approach is much faster then the first one.      
+
+
+--------------------------------------------------------------------------------------
+# Prog1(using "Thread") :
+    public class A extends Thread{ //run()  start()
+        @Override
+        public void run() {
+            for (int i = 0; i <1000; i++) {
+                System.out.println("run");
+            }
+        }
+
+        public static void main(String[] args) {
+            A a1 = new A();
+            a1.start();
+            for (int i = 0; i < 1000; i++) {
+                System.out.println("main");
+            }
+        }
+    }    
+
+
+
+# Prog2(using "Thread"):
+    package p1;
+    public class A extends Thread{ //run()  start()
+        String name;
+        A(String name){
+            this.name = name;
+        } 
+        
+        @Override
+        public void run() {
+            for (int i = 0; i <1000; i++) {
+                System.out.println("run");
+            }
+        }
+    }    
+
+    package p1;
+    public class B{ //run()  start()
+       public static void main(String[] args) {
+            A a1 = new A("xxx");
+            A a2 = new A("yyy");
+            A a3 = new A("zzz");
+
+            a1.start();
+            a2.start();
+            a3.start();
+       }
+    }    
+
+
+
+# Prog3(using "Runnable"):
+    package p1;
+    public class A implements Runnable{ //run()
+        String name;
+        A(String name){
+            this.name = name;
+        } 
+        
+        @Override
+        public void run() {
+            for (int i = 0; i <1000; i++) {
+                System.out.println(this.name);
+            }
+        }
+
+        public static void main(String[] args) {
+            A a1 = new A("xxx");
+            Thread t1 = new Thread(a1);
+            t1.start();
+
+            A a2 = new A("yyy");
+            Thread t2 = new Thread(a2);
+            t2.start();
+
+            for (int i = 0; i <1000; i++) {
+                System.out.println("main");
+            }
+        }
+    }    
+
+    
+
+--------------------------------------------------------------------------------------
+# Drawback of threads:
+    - We cannot implement "Thread" concept to those module which are using common data. 
+    - This is called "synchronization problem"
+
+Ex(In this example we can see that we are something getting "negative balance", thus the data is corrupted):
+    public class A{
+        int balance = 0;
+
+        public static void main(String[] args){
+            A a1 = new A();
+            a1.account();
+            System.out.println(a1.balance);
+        }
+
+        public void account(){
+            Thread t1 = new Thread(new Runnable(){
+                @Override 
+                public void run() {
+                    add();
+                }
+            });
+        
+            Thread t2 = new Thread(new Runnable(){
+                @Override 
+                public void run() {
+                    sub();
+                }
+            });
+
+            try{
+                t1.join();  //.join() so that "t1" thread will continue after "t2" thread.      
+                t2.join();  //.join() so that "t2" thread will continue after "t1" thread.      
+            }catch(Exception e){
+                System.out.println(e);
+            }
+        }
+
+        public void add() {
+            for (int i = 0; i <1000; i++) {
+                balance++;    
+            }
+        }
+        public void sub() {
+            for (int i = 0; i <1000; i++) {
+                balance--;    
+            }
+        }
+    }
+
+
+
+--------------------------------------------------------------------------------------
+# To fix this problem we use "synchronized thread":
+    - When 2 Threads are operating on common data, the data might get corrupted because of multitasking.
+
+    - To make the Threads operate one after another we use  "synchronized" keyword.
+    - During this the thread which has acquired the locked can only execute the block.
+    - Whereas the other thread will be in wait status, only when the first thread has released the lock the other thread will get the opportunity to acquired the lock and execute the block.      
+
+Ex(using "synchronized" keyword) :
+    public class A{
+        int balance = 0;
+
+        public static void main(String[] args){
+            A a1 = new A();
+            a1.account();
+            System.out.println(a1.balance);
+        }
+
+        public void account(){
+            Thread t1 = new Thread(new Runnable(){
+                @Override 
+                public void run() {
+                    add();
+                }
+            });
+        
+            Thread t2 = new Thread(new Runnable(){
+                @Override 
+                public void run() {
+                    sub();
+                }
+            });
+
+            try{
+                t1.join();  //.join() so that "t1" thread will continue after "t2" thread.      
+                t2.join();  //.join() so that "t2" thread will continue after "t1" thread.      
+            }catch(Exception e){
+                System.out.println(e);
+            }
+        }
+
+        public synchronized void add() { // "add()" method running in synchronized mode
+            for (int i = 0; i <1000; i++) {
+                balance++;    
+            }
+        }
+        public synchronized void sub() { // "sub()" method running in synchronized mode
+            for (int i = 0; i <1000; i++) {
+                balance--;    
+            }
+        }
+    }
+
+
+
+--------------------------------------------------------------------------------------
+# 'wait()' in threads:
+    Ex: 
+        package p1;
+        public class A{
+            psvm(){
+                B b1 = new B();
+                b1.start();
+
+                synchronized (b1) {
+                    try {
+                        b1.wait();        
+                    }catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                S.o.p(b1.total);
+            }  
+        }
+
+        package p1;
+        public class B extends Thread{
+            psvm(){
+                int total = 0;
+
+                public synchronized void run() {
+                    for (int i = 0; i <1000; i++) {
+                        total++;
+                    }
+
+                    notify();
+                }
+            }  
+        }
+        
+
+
+--------------------------------------------------------------------------------------
+# Lifecycle of a thread:
+    Ex: 
+        public class A extends Thread {
+            public static void main(String[] args) {
+                A a1 = new A();
+                System.out.println(a1.getState());
+                a1.start();
+
+                try {
+                    Thread.sleep(100);         
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            public void run(){
+                System.out.println("Test");
+            }
+        }
+
+
+--------------------------------------------------------------------------------------
+# Thread Priority:
+    - It decides which thread will run first and which will run later.
+    - If we set the priority then it is request made to "thread schedular" where there is no surety that it will be processed and approved.  
+    - The "minimum priority is 1", the "maximum priority is 10" and the "normal priority is 5".
+    - However we can set the priority by giving any number between "1 and 10".
+
+Ex: 
+    public class A extends Thread {
+        String name;
+        A (String name){
+            this.name = name;
+        }
+
+        public  static void main(String[] args){
+            A a1 = new A("xxx");
+            A a2 = new A("zzz");
+            
+            a2.setPriority(10);
+            a1.setPriority(1);
+
+            System.out.println(a1.getPriority());    
+            System.out.println(a2.getPriority());    
+
+            a1.start();
+            a2.start();
+        }
+
+        public void run(){
+            System.out.println(this.name);
+        }
+
+    }
+
+
+--------------------------------------------------------------------------------------
+# Thread Pool:
+    - Thread pool are useful when we need to limit the number of threads running in our application at the same time.
+    - This will help help us to improve the performance of our application.
+
+    - ie. Instead of starting a thread for every task to execute currently, the task can be passed to a thread pool.
+    - A thread pool contains collection of threads. 
+    - As soon a the pool has any inactive thread the task is assigned to one of them and executed.
+    - Thread pool are often used in servers.
+    - Each connection arriving at the server via the network is wrapped as a task and passed to a thread.
+    - The threads in the "Thread pool" will process the request on the connection concurrently.
+    - This is how we can use existing threads instead of creating a new thread and thus improve the performance.   
+
+
+
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+

@@ -2,7 +2,26 @@
 
 Start Date => 8/07/23  
 
-Last watched => 4/9/2023 
+Last watched => 6/9/2023 
   
 
 #recorded-series-part1 => string class(28/10/2020) => 10videos
+
+
+questions:
+- find tha duplicate elements in an array and remove it.
+- WAP to print:
+    1
+    23
+    456
+    78910
+    1112131415
+
+- WAP to print:
+      1
+     111
+    11111
+
+- 
+
+

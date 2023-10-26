@@ -1,0 +1,26 @@
+# How to download and configure 'connector J' for using MySQl in JAVA.
+
+# Download 'connector J':
+    - Open Google and search 'MySQl connector J'
+    - Now open the first link: 'https://dev.mysql.com/downloads/connector/j/'
+    - Select 'Platform Independent' from the Dropdown.
+    - Download the ZIP file (2nd option)
+    - Click 'No thanks, just start my download.' to start the download
+
+
+# Configure 'connector J' with JAVA:
+    - Now extract the zip file
+    - Open the folder > copy the ".jar" file > and Open Eclipse
+    - Create new 'java project' > Give any name: 'jdbc' > And Click Finish
+    - Create a folder > Give any name: 'lib' > Past the ".jar" file
+    - Now Right click on the "your-jdbc-project" > properties > java build path
+    - Select 'libraries' from top > Add JARs > find and select the ".jar" files
+
+
+# Use this connector in your project:
+    - import java.sql.*;
+
+
+
+
+

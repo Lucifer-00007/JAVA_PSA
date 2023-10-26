@@ -1,0 +1,52 @@
+#Java Database Connectivity
+
+# What is SQL?
+    - SQL: SQL is a programming language used for managing and manipulating relational databases.
+
+
+# Some SQL Queries:
+        -> To create a databases:
+        - Create databases [databases-name]
+
+        -> Select database
+        - use [databases-name] 
+        
+        -> Create table
+        - create table [table-name]( [your-table-config] ) 
+        
+        -> View all content of a table
+        - select * from [table-name]
+
+        -> Insert Data:
+        - insert into [table-name] values ( [your-table-values] )
+ 
+
+# Use MySQL from Java:
+    Ex:
+        package p1;
+        import java.sql.*;
+
+        public class A{
+            psvm(){
+                try {
+                    //connect to the database
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/database_name", "username", "password");
+                    System.out.println(con);
+
+                    //Write and run SQL statements
+                    Statement stmnt = con.createStatement();
+                    stmnt.executeUpdate("insert into your_table values('your_value1', 'your_value2', 'your_value3') ");
+
+                    //Close Connection
+                    con.close();
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+
+
+
+
