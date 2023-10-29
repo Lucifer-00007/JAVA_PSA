@@ -1,0 +1,74 @@
+#Abstraction:
+    - It is process of hiding the real implementation of an application from the user and emphasizing only the usage of it.
+    
+    - In programming it means to put together all the backend code and don't let the user known about this code.User should only know front end working of this code.
+
+    - In java abstraction is achieved using "Interface" and "Abstract Class"
+
+    
+
+-----------------------------------------------------------------
+
+# Abstract Class:
+    - It can have both complete and incomplete methods.
+    
+    - Abstract class can be 0 to 100% incomplete.
+    
+    - It can have both static and non static variables.But an object of abstract class cannot be created.
+    - Non-static member(like non-static-variable or non-static-method) can only be accessed by inheriting that to child class.
+
+    - Multiple inheritance is not allowed in abstract class.
+
+    Ex: 
+        package p1;
+        abstract public class A{
+            int x = 10; //non-static
+            
+            abstract public void test1(); //incomplete method
+
+            abstract public void test2(){ //complete method
+            }
+
+            public void test3(){  //non-static
+                S.o.p("From A");
+            }
+
+            psvm(){
+                A a1 = new A(); //Error
+            }
+        }
+
+
+        package p1;
+        public class B extends A{
+            psvm(){
+                B b1 = new B();
+                S.o.p(b1.x); //Accessing non-static variable from class B
+                b1.test3();  //Accessing non-static method from class B
+            }        
+        }
+
+
+
+-----------------------------------------------------------------
+#Diff bw "Interface" and "Abstract class" for java version 7:
+
+->Interface
+    - Are 100% incomplete.
+    
+    - Supports multiple inheritance.
+
+    - Variables are final and static.
+
+
+->Abstract class:
+    - Can 0% to 100% incomplete
+
+    - Does not support multiple inheritance.
+
+    - Variables are final, static and non-static  as well.
+
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------

@@ -340,6 +340,21 @@
     }
 
 
+21. find tha duplicate elements in an array and remove it.
+
+22. WAP to print:
+    1
+    23
+    456
+    78910
+    1112131415
+
+23. WAP to print:
+      1
+     111
+    11111
+
+
 
 
 

@@ -4,6 +4,8 @@
     - SQL: SQL is a programming language used for managing and manipulating relational databases.
 
 
+
+--------------------------------------------------------------------------------------
 # Some SQL Queries:
         -> To create a databases:
         - Create databases [databases-name]
@@ -14,15 +16,23 @@
         -> Create table
         - create table [table-name]( [your-table-config] ) 
         
-        -> View all content of a table
+        -> View all content of a table(Read data)
         - select * from [table-name]
 
         -> Insert Data:
-        - insert into [table-name] values ( [your-table-values] )
+        - insert into [table-name] values ( "[your-table-values]" )
+
+        -> Update Data:
+        - update [table-name]  set [update-conditions] where [search-conditions]
+
+        -> Delete Data:
+        - delete from [table-name] where [search-conditions] 
  
 
+
+--------------------------------------------------------------------------------------
 # Use MySQL from Java:
-    Ex:
+    Ex1 (create data):
         package p1;
         import java.sql.*;
 
@@ -46,7 +56,86 @@
         }
 
 
+    Ex2 (update data):
+        package p1;
+        import java.sql.*;
 
+        public class A{
+            psvm(){
+                try {
+                    //connect to the database
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/database_name", "username", "password");
+                    System.out.println(con);
+
+                    //Update SQL statement
+                    Statement stmnt = con.createStatement();
+                    stmnt.executeUpdate(" update your_table  set email='name@email.com', phone='9876543210' where id='1122' ");
+
+                    //Close Connection
+                    con.close();
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+    Ex3 (delete data):
+        package p1;
+        import java.sql.*;
+
+        public class A{
+            psvm(){
+                try {
+                    //connect to the database
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/database_name", "username", "password");
+                    System.out.println(con);
+
+                    //Delete SQL statement
+                    Statement stmnt = con.createStatement();
+                    stmnt.executeUpdate(" delete from your_table where email='name@email.com' ");
+
+                    //Close Connection
+                    con.close();
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+    Ex4 (read data):
+        package p1;
+        import java.sql.*;
+
+        public class A{
+            psvm(){
+                try {
+                    //connect to the database
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/database_name", "username", "password");
+                    System.out.println(con);
+
+                    //Read all data using 'executeQuery' 
+                    Statement stmnt = con.createStatement();
+                    ResultSet result = stmnt.executeQuery(" select * from your_table ");
+
+                    while(result.next()) { //this loop runs according to no. of rows in "our-table"
+                        System.out.println(result.getString(1)); //first column data
+                        System.out.println(result.getString(2)); //second column data
+                        System.out.println(result.getString(3)); //third column data
+                    }
+
+                    //Close Connection
+                    con.close();
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+
+--------------------------------------------------------------------------------------
 
 
 

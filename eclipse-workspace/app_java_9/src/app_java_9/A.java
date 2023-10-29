@@ -4,10 +4,10 @@ import java.sql.*;
 
 public class A {
 	public static void main(String[] args) {
-		 try {
+		 try {			 
 			//connect to the database
-	        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/coinBase", "root", "root");
-	        System.out.println(con);
+	        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/coinBase", "coin", "Temp123#");
+	        //System.out.println(con);
 	
 	        //Write and run SQL statements
 	        Statement stmnt = con.createStatement();

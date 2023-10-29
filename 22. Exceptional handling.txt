@@ -169,9 +169,80 @@ Type2:
 
 
 ---------------------------------------------------------------------------------------------
+# try catch and finally:
+    # Finally:
+        - "finally" is an optional block, but when present, it will always be executed, regardless of an exception is thrown or not.     
+
+        - "finally" block is mostly used to "close a connection from database", "close any open file", "close scanner class" etc.
+
+        Ex:
+            public class A{
+                psvm(){
+                    try{
+                        int i = 10/0;
+                        System.out.print(i);    
+                    
+                    }catch(Exception e){
+                        e.printStackTrace();
+                    
+                    }finally{
+                        System.out.print("This block will run regardless of an exception is thrown or not.");    
+                    }
+                }
+            }
+
+    # Note: To exit "finally" block forcefully we use "System.exit(0);"
+        Ex:
+            public class A{
+                psvm(){
+                    try{
+                        int i = 10/0;
+                        System.out.print(i);    
+                    
+                    }catch(Exception e){
+                        e.printStackTrace();
+                    
+                    }finally{
+                        System.exit(0);  //exit "finally block"
+
+                        System.out.print("This block will run regardless of an exception is thrown or not.");    
+                    }
+                }
+            }
+            
+
+---------------------------------------------------------------------------------------------
+# Multiple catch blocks:
+    - When we use a "Multiple catch block" the "exception hierarchy" should be maintained.
+    - Note: If we want to use a global variable "inside a static method", the "variable must be static".   
+    
+    Ex:
+        public class B{
+            static int x = 1; //static variable x
+
+            psvm(){  //static method
+                try{
+                    FileReader fr = new FileReader("some/non-existent/path");
+                }catch(ArithmeticException e){
+                    System.out.println(x);
+
+                }catch(NullPointerException e){
+                    System.out.println(2);
+                
+                }catch(NumberFormatException e){
+                    System.out.println(3);
+                
+                }catch(Exception e){
+                    System.out.println(4);
+                
+                }
+                
+            }
+        }
 
 
 
+---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
 
 

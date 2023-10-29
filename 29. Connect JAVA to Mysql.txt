@@ -18,6 +18,7 @@
 
 
 # Use this connector in your project:
+    - In the same project where created the "lib" folder write all your "jdbc code". 
     - import java.sql.*;
 
 

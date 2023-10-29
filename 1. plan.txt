@@ -2,26 +2,11 @@
 
 Start Date => 8/07/23  
 
-Last watched => 6/9/2023 
-  
+Last watched => 13/9/2023 
+(30 videos left)  
 
-#recorded-series-part1 => string class(28/10/2020) => 10videos
+#recorded-series-part2 => class(5/11/2020) =>  (all code-java) 20/11/2020 =>  18videos
 
-
-questions:
-- find tha duplicate elements in an array and remove it.
-- WAP to print:
-    1
-    23
-    456
-    78910
-    1112131415
-
-- WAP to print:
-      1
-     111
-    11111
-
-- 
+ 
 
 
