@@ -1,0 +1,18 @@
+- Windows > Show views > server
+
+- Click "Server" > Clink on the "link"
+
+- Open "Apache" > check for all available tomcat version
+
+- Go to google and search "download tomcat 9" > go to "https://tomcat.apache.org/download-90.cgi" > from 9.0.X > core > download "zip (pgp, sha512) " file. > and extract the ZIP file
+
+- Again open "Apache" > click the  version we downloaded > next > bowse > select the folder where we unzipped tomcat
+
+- Under JRE select java 1.8.0 > Click finish
+
+
+-------------------------------------------------------------------------
+#Create web app:
+    - See if there is a folder name "Servers" in our project path
+    - In the same path right click > new > dynamic web app > give 'any_name'
+    - Check if correct version of "tomcat" is selected in "Target runtime" > click finish.

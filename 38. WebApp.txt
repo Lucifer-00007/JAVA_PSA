@@ -1,0 +1,10 @@
+# Frontend:
+    Location:  project_folder/src/webapp
+
+
+
+# Backend:
+    Location:  project_folder/Java Resources/
+    - create a new package > give "any name to the package"
+    - right click on th package > new > "Servlet"
+     
