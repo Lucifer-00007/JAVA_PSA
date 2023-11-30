@@ -1,0 +1,145 @@
+# JSP - Java Server Pages/ Jakarta Server Pages:
+    - JavaServer Pages (JSP) is a technology used for creating dynamic web pages in Java web applications. 
+    - JSP allows you to embed Java code within HTML pages, making it easier to generate dynamic content and interact with databases and other server-side technologies.
+
+
+-----------------------------------------------------------------------------------------------
+# Scriptlet Tag: 
+    - The "<% %>" tags are called as "Scriptlet Tag".
+    
+    - Inside "Scriptlet Tag":
+        - HTML code is not supported.
+        
+        - Access specifier('public','private' or 'protected') is not allowed.
+        
+        - We have "built in implicit objects".
+            - "request", "response", "session", and "out"
+                - Ex:
+                    <%
+                        String greeting = "Hello, World!";
+                        out.println(greeting);  //It will print in the browser.
+                        System.out.println(greeting); //It will print in the eclipse console.
+                    %>
+                            
+        - And we can write partial java code.  
+
+    - Ex1: 
+        <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>My JSP Page</title>
+        </head>
+        <body>
+            <%
+                // This is Java code within the JSP
+                String message = "Hello, JSP!";
+            %>
+            <h1><%= message %></h1>
+        </body>
+        </html>
+
+
+#Note:
+    - However, it's important to note that using scriptlets is not considered a best practice in modern web development. 
+    
+    - Instead, it's recommended to use JSTL (JavaServer Pages Standard Tag Library) and EL (Expression Language) for separating the presentation layer from the business logic. 
+    
+    - These technologies make JSP pages cleaner, more maintainable, and easier to read.
+
+
+
+-----------------------------------------------------------------------------------------------
+#Declaration Tag:
+    - The "<%!  %>" tags are called as "Declaration Tag".
+    
+    - In "Declaration Tag" we can "Declare Methods".
+    
+    - We can use Access specifier('public','private' or 'protected').
+    
+    - We cannot use implicit objects like:
+        - "request", "response", "session", and "out"        
+
+    - We cannot wite HTMl code directly.
+
+
+    Ex:
+        <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Declaration Tag Example</title>
+        </head>
+        <body>
+            <%
+                //We can use access specifiers
+                public int count = 0;
+
+                public String generateGreeting() {
+                    return "Hello, World!";
+                }
+            %>
+
+            <p>Count: <%= count %></p>
+            <p>Greeting: <%= generateGreeting() %></p>
+        </body>
+        </html>
+ 
+
+-----------------------------------------------------------------------------------------------
+#Expression Tag:
+    - The "<%=  %>" tags are called as "Expression Tag".
+    
+    - In "Expression Tag" we cannot use semicolon(;). 
+    
+    - In this we cannot write more than one statement. 
+    
+    Ex:
+        <%
+            String username = "JohnDoe";
+        %>
+        <p>Welcome, <%= username %></p>
+
+
+
+-----------------------------------------------------------------------------------------------
+#Directive Tag:
+    - There are 2 directives tags:
+        1. Page directive tag.
+            - They are use to "import"
+            - The "<%@  %>" tags are called as "Page directive tag".
+
+            Ex1 (Date and Time with Page Directive):
+                <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+                <%@ page import="java.time.LocalDateTime" %>
+                <%@ page import="java.time.format.DateTimeFormatter" %>
+                <%@ page isELIgnored="false" %>
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Date and Time with Page Directive</title>
+                </head>
+                <body>
+                    <%
+                        LocalDateTime currentDateTime = LocalDateTime.now();
+                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                        String formattedDateTime = currentDateTime.format(formatter);
+                    %>
+                    <p>Current Date and Time: <%= formattedDateTime %></p>
+                </body>
+                </html>
+
+
+        2. Include directive tag. 
+            - The "<%@ include file="path-to-your-file"  %>" tags are called as "Include directive tag".
+            - Ex:
+                <%@ include file="header.jsp" %>
+
+
+-----------------------------------------------------------------------------------------------
+
+
+
+
+
+

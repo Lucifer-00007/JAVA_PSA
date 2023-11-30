@@ -1,0 +1,61 @@
+#Model View Controller:
+    - It is a Project-application's "Architecture Type".
+
+
+>>   "View" <--------> "Controller" <--------> "Model"
+
+
+--------------------------------------------------------------------------------------------------
+#View:
+    - All the frontend code of the application is kept in the "Views".
+    - eg: HTML, JSP, etc.
+    - 
+
+
+--------------------------------------------------------------------------------------------------
+#Controller:
+    - "Controller" layer acts as a mediator bw "View" and "Model".
+    - ie. it takes data from the "Views" and gives it to "Model" & vice versa.
+    
+    - To create a controller:
+        - In "our_web_app" > right click on "Java Resources" > "src/main/java" > new > package > give the name like "com.our_web_app.controller".
+    
+    - Inside  "controller"(com.our_web_app.controller) we create "servlets" eg: "loginController.java"    
+
+
+--------------------------------------------------------------------------------------------------
+#Model:
+    - In the "Model" layer we implement the "business logic" or "databases code".
+    - To create a model:
+        - In "our_web_app" > right click on on "Java Resources" > "src/main/java" > new > package > give the name like "com.our_web_app.model".
+    - Inside  "model"(com.our_web_app.model) we create "Interface, Class" eg: "DAOService.java" 
+
+
+--------------------------------------------------------------------------------------------------
+#Flow control:
+    - Login.jsp --> loginController ---(if valid)--> reg.jsp ---(read)--> regController ---> Model ---> DataBase 
+
+    - All Registration --> ReadRegistrationController.jsp --> Model --> DataBase
+                                |
+                                 ---> search_result.jsp  
+--------------------------------------------------------------------------------------------------
+#Note:
+    - If we create any "JSP File" inside "WEB-INF/views", then is cannot be opened directly on browser.
+    - This "JSP File" can only be accessed through "servlet".  
+    - Also we will not see the "page_name" on the "URL".
+        
+
+--------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
