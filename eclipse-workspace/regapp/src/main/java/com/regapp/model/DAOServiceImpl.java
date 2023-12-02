@@ -51,4 +51,32 @@ public class DAOServiceImpl implements DAOService {
 		}
 		
 	}
+
+	@Override
+	public void deleteRegistration(String email) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_users_data", "Admin123", "Temp123#");
+			Statement stmnt = con.createStatement();
+			stmnt.executeUpdate(" delete from user_data where email='"+email+"' ");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+	
+	}
+
+	@Override
+	public void updateRegistration(String email, String mobile) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_users_data", "Admin123", "Temp123#");
+			Statement stmnt = con.createStatement();
+			stmnt.executeUpdate("update user_data set phone='"+mobile+"' where email='"+email+"'");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 }	

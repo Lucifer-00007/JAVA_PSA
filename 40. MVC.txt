@@ -35,9 +35,17 @@
 #Flow control:
     - Login.jsp --> loginController ---(if valid)--> reg.jsp ---(read)--> regController ---> Model ---> DataBase 
 
-    - All Registration --> ReadRegistrationController.jsp --> Model --> DataBase
+
+    -(Read_data) All Registration --> ReadRegistrationController.jsp --> Model --> DataBase
                                 |
                                  ---> search_result.jsp  
+
+
+    -(Update_Data) email, mobile ---> Controller ---> Model ---> DataBase
+                            |
+                             ---> search_result.jsp                             
+
+
 --------------------------------------------------------------------------------------------------
 #Note:
     - If we create any "JSP File" inside "WEB-INF/views", then is cannot be opened directly on browser.

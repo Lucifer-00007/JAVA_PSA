@@ -38,15 +38,7 @@
 				style="max-width: 400px; font-size: 1.5rem !important;">
 				<h1 class="card-title mt-3 text-center">Create Account</h1>
 				<h5 class="text-center">Get started with your free account</h5>
-				<form id="regForm" action="newReg" method="post">
-					<div class="form-group input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"> <i class="fa fa-user"></i>
-							</span>
-						</div>
-						<input class="form-control" required name="name" id="name"
-							placeholder="Full name" type="">
-					</div>
+				<form id="regForm" action="update" method="post">
 					<!-- form-group// -->
 					<div class="form-group input-group">
 						<div class="input-group-prepend">
@@ -54,8 +46,9 @@
 							</span>
 						</div>
 						<input name="email" id="email" class="form-control" required
-							placeholder="Email address" type="email">
+							placeholder="Email address" type="email" value="<%=request.getAttribute("email")%>">
 					</div>
+					
 					<!-- form-group// -->
 					<div class="form-group input-group">
 						<div class="input-group-prepend">
@@ -67,26 +60,15 @@
 							<option value="1">+972</option>
 							<option value="2">+198</option>
 							<option value="3">+701</option>
-						</select> <input name="phone" id="phone" minlength="10" maxlength="10"
+						</select> 
+							<input name="phone" id="phone" minlength="10" maxlength="10"
 							class="form-control" required placeholder="Phone number"
-							type="text">
+							type="text" value=<%=request.getAttribute("mobile")%>>
 					</div>
-					<div class="form-group input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"> <i class="fas fa-city"></i>
-							</span>
-						</div>
-						<input name="city" id="city" class="form-control" required
-							placeholder="City" type="text">
-					</div>
-
 					<div class="form-group">
-						<button id='insertBtn' type="submit"
-							class="btn btn-primary btn-block">Create Account</button>
+						<button id='updateBtn' type="submit"
+							class="btn btn-primary btn-block">Update</button>
 					</div>
-					<p class="text-center">
-						Have an account? <a href="login.jsp">Log In</a>
-					</p>
 				</form>
 			</article>
 		</div>
