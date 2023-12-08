@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.regapp.model.DAOService;
 import com.regapp.model.DAOServiceImpl;
@@ -32,6 +33,11 @@ public class loginController extends HttpServlet {
 		System.out.println(status);
 		
 		if(status) {
+			HttpSession session = request.getSession(true);
+			session.setAttribute("email", email);
+			
+			session.setMaxInactiveInterval(10);
+			
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/create_registration.jsp");
 			rd.forward(request, response);
 		}else {

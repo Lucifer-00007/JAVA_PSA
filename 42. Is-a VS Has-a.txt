@@ -1,0 +1,92 @@
+# Video-class: 17/10/23
+
+
+
+----------------------------------------------------------------------------------------------
+# "Is a" Relationship(inheritance):
+    - This relationship is related with 'inheritance'.
+    - It implies that one class is a subtype or specialization of another class.
+   
+    - Example1: 
+        - A 'Square class' "is a" 'Shape class'. 
+        - Here, Square inherits properties and behaviors from the more general Shape class.
+
+    - Example2: 
+        - 
+
+
+------------------------------------------------------------------------------------------------
+# "Has a" Relationship(association):
+    - This relationship is typically associated with 'composition' or 'aggregation'.
+    - It implies that one class has an instance of another class as a member or attribute.
+    
+    - Example1: 
+        - A 'Car class' "has a" Engine class. 
+        - The Engine is a part of the Car, but they are distinct entities.
+
+    - Example2: 
+        - 
+
+    - # Composition(Whole-part relationship):
+        - Ex: The rooms of an hotel. If the hotel is destroyed automatically rooms will also not exist.
+        - Thus 'Composition' has a strong ownership.
+
+    - # Aggregation(Weak ownership relation):
+        - Ex: The furniture of a hotel. If the hotel is destroyed the furniture can still be used.
+        - Thus 'Composition' has a strong ownership.
+
+
+    - Code Example:
+        Note: If we want to write 'multiple class' in eclipse then make one 'class public with the same filename' and the other as 'default class'.  
+
+        package p1;
+        public class Country{
+            private String name;
+            
+            public Country(String name){
+                that.name = name;
+            }
+
+            public String getName(){
+                return name;
+            }        
+        }
+
+        class PrimeMinister{
+            private Country country; //'PrimeMinister' knows about this 'Country' but not vice versa.
+            
+            public PrimeMinister(String name, Country country){
+                this.name = name;
+                this.country = country;
+            }
+
+            public static void main(String[] args){
+                Country country = new Country("India");   
+                PrimeMinister pm = new PrimeMinister("modi", null);   
+            
+                System.out.println(pm.name);
+                System.out.println(pm.country.getName());
+            }
+        
+        }
+
+------------------------------------------------------------------------------------------------
+#Note:
+    - Unidirectional association: When 'object1' knows all about 'object2' but not vice versa.
+
+    - Bidirectional association: When 'object1' knows all about 'object2' and not vice versa.
+
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+

@@ -19,6 +19,8 @@
 
 - How to convert string to integer? 
 
+- What is Wrapper Class?
 
+- Diff bw primitive and non-primitive data types.
 
 

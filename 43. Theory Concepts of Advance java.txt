@@ -1,0 +1,103 @@
+# Diff bw 'doGet' and 'doPost':
+    doGet                              |               doPost
+----------------------------------------------------------------------------
+- To be use to read data from backend  | - To be use to submit data to backend
+                                       |     
+- We do not get the security popup when| - When we refresh the page we will a 
+we refresh the page.                   | security popup box to avoid duplicate 
+                                       | transactions.
+                                       | 
+- All the data is visible in the url.  |- All the data is secure and hidden.   
+
+
+
+-----------------------------------------------------------------------------------------------
+#Servlet Life Cycle:
+    =>   " init() "   --->  Service(doGet, doPost) ---> " destroy() "  
+
+#Note1: 
+    - In the "init()" method we can write the "database connection code". 
+    - In the "Service" we perform the crude operations.
+    - In the "destroy()" method we can "close the connection".
+
+#Note2: 
+    - In the "init()" method will only run once". 
+    - "Service" method(doGet and doPost) can run 'n' number of times.
+    - Finally when the "destroy()" method is called Servlet Life Cycle will end.
+
+
+#Drawback of Servlet:
+    - When we try to write HTML inside Servlet(JAVA) the code becomes very messy and difficult to maintain.
+    - Thus to overcome this problem we use JSP. Where we write 'Java code' inside 'HTML' directly.
+
+
+
+-----------------------------------------------------------------------------------------------
+#JSP life Cycle:
+    - "JAVA(HTML)" is JSP ---> JSP Translator ---> Servelet (jspinit();, service();, _jspdestroy();)  
+
+Note1:
+    - Java code that we write inside JSP is translated into servelet using JSP translator.
+    
+    - The "init()" method runs only once, "Service" method(doGet and doPost) can run 'n' number of times, Finally when the "destroy()" method is called Servlet Life Cycle will end. 
+
+
+
+-----------------------------------------------------------------------------------------------
+# Application server vs Web server:
+
+    Application server                     |               Web server
+---------------------------------------------------------------------------------------
+- It is used to build dynamic application. |- It is used to build static application using
+                                           |  HTML, CSS, etc. 
+                                           |     
+- Supports servlet, jsp, EJ, Spring Boot,  | 
+Hibernate, to run.                         | 
+                                           | 
+- Ex:                                      | - Ex:   
+    - tomcat                               |    - Nginx 
+    - JBoss                                |    - Apache    
+    - Glassfish                            |    - Microsoft IIS
+
+
+
+-----------------------------------------------------------------------------------------------
+#What is servlet?:
+    - Servlet are Java classes that extends HTTPServlet
+    - It is used to build backend of the application.
+    - It can read/write data from/to frontend of the application.       
+
+
+
+-----------------------------------------------------------------------------------------------
+#What are JSP?:
+    - JSP gives us the flexibility of embedding java code inside HTML.
+    - This will make the development easier.
+
+
+
+-----------------------------------------------------------------------------------------------
+#What are implicit objects in JSP?:
+    - 
+
+
+-----------------------------------------------------------------------------------------------
+#What do u mean by 'include' and 'forward' in JSP?:
+    - include(): 
+        - The 'include()' method is used to include the output of another servlet or JSP within the current response.
+
+    - forward():  
+        - The 'forward()' method is used to forward the request from one servlet to another.
+    
+
+-----------------------------------------------------------------------------------------------
+
+
+
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+
+
+

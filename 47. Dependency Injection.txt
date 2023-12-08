@@ -1,0 +1,133 @@
+Video: 30/10/23 
+
+-------------------------------------------------------------------------------------------------
+--> Target: 
+    - Storing the data "Entity class data" into the db using 'hibernate'. 
+
+
+-------------------------------------------------------------------------------------------------
+#Note1:
+    - In JAVA we can create object by 2 ways:
+        - create directly like: " A a1 = new A(); "
+
+        - Loose Coupling: create "object in the child class" using the "parent class reference variable" through inheritance like: 
+            - Create a parent 'class A'.
+            - Now inherit 'class A' into 'class B'
+            - Now inside the child 'class B' we can write like --> "A a1 = new B();" 
+
+            EX:
+                // Interface defining the contract
+                interface PaymentProcessor {
+                    void processPayment(double amount);
+                }
+
+                // Concrete implementation of PaymentProcessor
+                class CreditCardPaymentProcessor implements PaymentProcessor {
+                    @Override
+                    public void processPayment(double amount) {
+                        // Logic for processing credit card payment
+                        System.out.println("Processing credit card payment of $" + amount);
+                    }
+                }
+
+                // Another implementation of PaymentProcessor
+                class PayPalPaymentProcessor implements PaymentProcessor {
+                    @Override
+                    public void processPayment(double amount) {
+                        // Logic for processing PayPal payment
+                        System.out.println("Processing PayPal payment of $" + amount);
+                    }
+                }
+
+                // Client class that uses PaymentProcessor through loose coupling
+                class ShoppingCart {
+                    private PaymentProcessor paymentProcessor;
+
+                    // Constructor injection for loose coupling
+                    public ShoppingCart(PaymentProcessor paymentProcessor) {
+                        this.paymentProcessor = paymentProcessor;
+                    }
+
+                    public void checkout(double amount) {
+                        // Perform shopping cart checkout logic
+
+                        // Delegate payment processing to the injected PaymentProcessor
+                        paymentProcessor.processPayment(amount);
+                    }
+                }
+
+                // Main application demonstrating loose coupling
+                public class Main {
+                    public static void main(String[] args) {
+                        // Creating instances with loose coupling
+                        PaymentProcessor creditCardProcessor = new CreditCardPaymentProcessor();
+                        PaymentProcessor paypalProcessor = new PayPalPaymentProcessor();
+
+                        ShoppingCart cart1 = new ShoppingCart(creditCardProcessor);
+                        ShoppingCart cart2 = new ShoppingCart(paypalProcessor);
+
+                        // Perform checkout with different payment processors
+                        cart1.checkout(100.0);
+                        cart2.checkout(50.0);
+                    }
+                }
+
+
+
+-------------------------------------------------------------------------------------------------
+#Note2:
+    - @Autowired anotation is Spring Boot:
+        - It is part of 'Spring IOC'(Inversion Of Control).
+        
+        - '@Autowired' is used to create object using 'Spring IOC'
+        - ie. '@Autowired' replaces the line 'A a1 = new A()' --> 
+                - '@Autowired' 
+                   private A a1;
+
+        - 'Spring IOC' is very smart since:
+            - Consider we create an 'interface A'
+            - Now we implement A in 'Class B'.
+            - Now if we use '@Autowired' for 'interface A'.
+            - Since interface cannot create object of its own, thus 'Spring IOC' will automatically create in child 'class B'
+
+
+
+-------------------------------------------------------------------------------------------------
+#Dependency Injection:
+    - During runtime Spring IOC automatically creates the required objects and injects it's address into the reference variable.
+
+    - We Perform 'Dependency Injection' using '@Autowired' annotation.
+
+    - Spring IOC:
+        - It maintains the lifecycle of the object created in spring.
+        - ie. 'object creating', 'object running' and 'object destroying' is done by 'Spring IOC'.
+        - In 'Spring IOC' object are called as 'Bean'.
+
+
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

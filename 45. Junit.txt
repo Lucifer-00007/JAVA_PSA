@@ -1,0 +1,144 @@
+#Junit:
+    - JUnit is a widely used testing framework for Java programming language. 
+   
+    - JUnit comes under "WhiteBox Testing(Unit Testing)" where we take the code and individual units or components of a software application are tested in isolation from the rest of the system. 
+   
+    - It provides annotations to identify test methods, supports fixtures for setup and cleanup, and includes various assertion methods for testing expected results.
+
+
+
+----------------------------------------------------------------------------------------------
+#Annotations:
+    - @Test: Identifies a method as a test method. JUnit runs these methods to execute tests.
+    
+    - @Before: Annotating a method with @Before ensures that it is executed before each test method. It's often used for setup tasks.
+    
+    - @After: Annotating a method with @After ensures that it is executed after each test method. It's often used for cleanup tasks.
+    
+    - @BeforeClass: Annotating a method with @BeforeClass ensures that it is executed once before any of the test methods in the class. It's often used for one-time setup tasks.
+    
+    - @AfterClass: Annotating a method with @AfterClass ensures that it is executed once after all the test methods in the class. It's often used for one-time cleanup tasks.
+
+
+
+    #Example Code:
+
+        import org.junit.jupiter.api.*;
+
+        public class Calculator {
+
+            @BeforeAll
+            static void setUpAll() {
+                // Code executed once before all test methods
+                System.out.println("Before all tests");
+            }
+
+            @BeforeEach
+            void setUp() {
+                // Code executed before each test method
+                System.out.println("Before each test");
+            }
+
+            @Test
+            void add() {
+                Calculator calculator = new Calculator();
+                int result = calculator.add(3, 7);
+                assertEquals(10, result, "Addition result is incorrect");
+            }
+
+            @Test
+            void subtract() {
+                Calculator calculator = new Calculator();
+                int result = calculator.subtract(10, 5);
+                assertEquals(5, result, "Subtraction result is incorrect");
+            }
+
+            @Test
+            @Disabled("Example of a disabled test")
+            void multiply() {
+                Calculator calculator = new Calculator();
+                int result = calculator.multiply(4, 5);
+                assertEquals(20, result, "Multiplication result is incorrect");
+            }
+
+            @Test
+            void divide() {
+                Calculator calculator = new Calculator();
+                double result = calculator.divide(10, 2);
+                assertEquals(5.0, result, "Division result is incorrect");
+            }
+
+            @Test
+            @DisplayName("Custom Test Name")
+            void customTestName() {
+                // Test with a custom display name
+                Calculator calculator = new Calculator();
+                int result = calculator.add(2, 3);
+                assertEquals(5, result, "Custom test name failed");
+            }
+
+            @Test
+            @Timeout(1) // Timeout in seconds
+            void testWithTimeout() {
+                // Test that runs with a timeout
+                // If it takes more than 1 second, the test will fail
+                // Useful for preventing tests from running indefinitely
+            }
+
+            @Test
+            @Tag("slow")
+            void slowTest() {
+                // Tagging a test for categorization
+                // Useful for running specific groups of tests
+            }
+
+            @AfterEach
+            void tearDown() {
+                // Code executed after each test method
+                System.out.println("After each test");
+            }
+
+            @AfterAll
+            static void tearDownAll() {
+                // Code executed once after all test methods
+                System.out.println("After all tests");
+            }
+
+            // Calculator methods
+            int add(int a, int b) {
+                return a + b;
+            }
+
+            int subtract(int a, int b) {
+                return a - b;
+            }
+
+            int multiply(int a, int b) {
+                return a * b;
+            }
+
+            double divide(int a, int b) {
+                if (b == 0) {
+                    throw new IllegalArgumentException("Cannot divide by zero");
+                }
+                return (double) a / b;
+            }
+        }
+
+
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+

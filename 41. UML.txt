@@ -1,0 +1,84 @@
+#Unified Modeling Language (UML): 
+    - Unified Modeling Language (UML) is a standardized modeling language in the field of software engineering. 
+    - It provides a set of graphical notations for visualizing, specifying, constructing, and documenting the artifacts of a system-intensive process. 
+
+    - UML was created to bring together industry-standard modeling languages, making it easier for software professionals to understand and communicate about complex systems.
+
+    - UML is mainly developed for object oriented programming(OPPS).
+
+
+-----------------------------------------------------------------------------------------------
+#Note: In a UML class diagram, symbols like +, -, #, and ~ are used to indicate the visibility or access level of class members (attributes and methods). 
+    
+    -->Here's what each symbol means:
+        +: Public visibility. Members with this symbol are accessible from outside the class.
+
+        -: Private visibility. Members with this symbol are only accessible within the class itself.
+
+        #: Protected visibility. Members with this symbol are accessible within the class and its subclasses.
+
+        ~: Package (default) visibility. Members with this symbol are accessible within the same package or namespace.
+
+
+
+-----------------------------------------------------------------------------------------------
+#Textual description in PlantUML
+    - PlantUML is an open-source tool that allows you to create Unified Modeling Language (UML) diagrams using a simple and human-readable textual description. 
+    
+    - With PlantUML, you can define diagrams using a domain-specific language (DSL) and then generate graphical representations of those diagrams.   
+
+    - Example:
+        @startuml
+        class Car {
+            - make: String
+            - model: String
+            - year: int
+            + startEngine(): void
+            + stopEngine(): void
+            + accelerate(speed: int): void
+            + brake(): void
+        }
+        @enduml
+
+
+
+-----------------------------------------------------------------------------------------------
+# How To use UML on Windows:
+    - Download & Install StarUML (Url: staruml.io)
+    - ChatUML Website
+
+
+
+-----------------------------------------------------------------------------------------------
+# StarUML usage:
+    - When we make a new "class" it will have 3 sections: ClassName, Attributes(variables), Methods(operations) 
+    
+    - In above example "- make: String"  mean  "private variable 'make' whose datatype is String".
+    
+    - In above example "+ startEngine(): void"  mean  "public method 'startEngine()' whose 'return type' is 'void'".
+    
+    - Note: If we don't write the 'return type' as 'void', it becomes a constructor.  
+
+
+
+-----------------------------------------------------------------------------------------------
+# "Is a" relationship vs "Has a" relationship:
+
+# Associations in JAVA:
+    - Aggregation
+    - Composition
+
+
+
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

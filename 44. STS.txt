@@ -1,0 +1,60 @@
+# Spring Boot, Hibernate, API's and Micro-Services.
+
+---------------------------------------------------------------------------------------------
+# Spring Boot(4.8.1) Download:
+    URL: https://www.oracle.com/java/technologies/downloads/#jdk17-windows
+
+
+---------------------------------------------------------------------------------------------
+#Setup STS:
+    - windows > preference > Install JREs > Add > Standard VM > Next > directory > Select JDK version till the 'bin' folder
+    - Check the correct(JDK 1.8) 'checkbox' > Apply and Next 
+
+
+#Create new Project:
+    - file > new > Spring Starter Project 
+    
+    - Set these:
+        - Name: Give any name to the project.
+        - Type: Mavel
+        - Java version: 8
+        - Group: com.demo 
+        - Artifact: It should be exactly same to the given 'Name'
+        - Package: com.demo.psa (it should be line 'Group.any_name' or only 'Group')
+        - Service URL: It is the link from where 'Spring boot project structure' is downloaded.  
+
+    - Now Click 'next' > select 'spring boot version 2.7.17' > 'finish'
+       
+    - Note: While creating the project keep the PC connected to internet. 
+
+
+
+---------------------------------------------------------------------------------------------
+# Note: In "Spring Boot Starter Project" 'pom.xml' file is used download 'Maven Dependencies'.
+
+    - How to add a Dependency:
+        - Go to https://mvnrepository.com
+        - Search your_required_dependency and select the required version.
+        - Now copy the Maven-xml-code and paste it in pom.xml inside "<dependencies> </dependencies>" tag. 
+
+
+
+---------------------------------------------------------------------------------------------
+# Types of Software Testing:
+    - BlackBox Testing
+    - Functional Testing
+    - WiteBox Testing/Unit Testing
+
+
+
+
+
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+
+
+
