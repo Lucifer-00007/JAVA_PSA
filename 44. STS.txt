@@ -46,12 +46,40 @@
     - WiteBox Testing/Unit Testing
 
 
-
+---------------------------------------------------------------------------------------------
+#CRUD Repository vs JPA Repository in STS:
+    - Note1: 'CRUD repositories' has some limitations thus 'JPA Repository' was introduced.
+    - Note2: 'JPA Repository' has all features of 'CRUD repositories' with some extra features like: 'Pagination', 'Sorting', etc.
 
 
 ---------------------------------------------------------------------------------------------
+# Web App in STS:
+    - Required Dependencies(while creation):
+        - Spring Data JPA
+        - MySQL Driver
+        - Spring Web
+
+    - 'Spring Web' Dependency give ability to develope: 
+        - MVC Architecture 
+        - Web application, (ie. we can add the frontend)
+        - API Development (Restful API)
+
+    - Create a new folder for JSP(ie. for Frontend):
+        - Go to 'src' folder > main > create folder like 'webapp/WEB_INF/'         
+        - Inside this create folder name 'views'
+
+
 ---------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------
+->Note: When we create a 'web application' in STS its necessary to add the 'mysql db details' in 'application.properties' file.
+
+-> Adding 'tomcat-embed-jasper'
+    - In 'pom.xml' file add this:
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
 
