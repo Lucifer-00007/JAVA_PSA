@@ -69,8 +69,7 @@
         - Inside this create folder name 'views'
 
 
----------------------------------------------------------------------------------------------
-->Note: When we create a 'web application' in STS its necessary to add the 'mysql db details' in 'application.properties' file.
+->Note1: When we create a 'web application' in STS its necessary to add the 'mysql db details' in 'application.properties' file.
 
 -> Adding 'tomcat-embed-jasper'
     - In 'pom.xml' file add this:
@@ -80,6 +79,17 @@
             <scope>provided</scope>
         </dependency>
 
+
+->Note2: 
+    - All 'HTML files' should be created inside the 'template' folder.
+    - All 'Static files' like 'images' should be created inside the 'static' folder.
+    - All 'JSP files' should be kept inside 'src/main/webapp/WEB_INF/'
+
+
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
 
