@@ -1,4 +1,4 @@
-package com.marketing;
+package com.marketing.entity;
 
 import jakarta.persistence.*;
 

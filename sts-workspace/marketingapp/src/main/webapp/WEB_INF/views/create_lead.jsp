@@ -22,7 +22,8 @@
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
+	
+	${msg}
 	<!-- Registration Form -->
 	<div class="container">
 		<br>

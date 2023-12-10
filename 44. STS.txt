@@ -87,9 +87,26 @@
 
 
 ---------------------------------------------------------------------------------------------
+-> What is @ModelAttribute?
+    - It is an optional attribute(may or may not be used).
+    - It is used to read data from the '<form>' and put that into 'Entity class object' in the 'Controller Layer'.
+
+
 ---------------------------------------------------------------------------------------------
+-> DTO(Data Transfer Object):
+    - 
+
+
 ---------------------------------------------------------------------------------------------
+#Note(Add Live Loading): To auto reload the project, when we save the changes in the code.
+    - Right click on 'your_project' > Spring > 'Add DevTools'
+    - Now auto reload of the project will work.
+
+
 ---------------------------------------------------------------------------------------------
+
+
+
 ---------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
 
