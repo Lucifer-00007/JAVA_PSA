@@ -1,0 +1,37 @@
+--> Make sure to configure your Gmail credentials and other properties in the application.properties file:
+
+    spring.mail.host=smtp.gmail.com
+    spring.mail.port=587
+    spring.mail.username=your-email@gmail.com
+    spring.mail.password=your-password
+    spring.mail.properties.mail.smtp.auth=true
+    spring.mail.properties.mail.smtp.starttls.enable=true
+
+
+-------------------------------------------------------------------------------------------------
+--> Also, include the necessary dependencies in your pom.xml:
+    <dependencies>
+        <!-- Other dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+    </dependencies>
+
+
+
+-------------------------------------------------------------------------------------------------
+--> Note:
+    - '@Component' --> When we want the lifecycle of class to be completely maintained by STS we use the '@Component' annotation.
+    - @Service --> An alternative of '@Component'. Purpose of both '@Component' and '@Service' are same.
+
+
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+
+

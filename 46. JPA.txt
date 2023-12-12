@@ -45,7 +45,7 @@ Videos Class: 27/10/23
 
 
 --------------------------------------------------------------------------------------------
-# Database Connection in STS:
+# Database Connection in STS:   
     - In 'src/main/resources' > application.properties
     - Configure the database information.
 

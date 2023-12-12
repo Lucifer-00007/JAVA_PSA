@@ -1,17 +1,12 @@
-<%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page import="java.sql.ResultSet"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="menu.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Register</title>
-<link rel="shortcut icon" href="https://ram-cab-new.web.app/favicon.png"
-	type="image/png">
+<title>All Registrations</title>
 
 <!-- Bootstrap CSS CDN -->
 <link rel="stylesheet"
@@ -23,41 +18,34 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
 	integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
-<title>User Data</title>
+
 </head>
 <body>
 	<div class="container">
 		<table class="table">
 			<thead class="thead-dark">
-			<tr>
-				<th>Name</th>
-				<th>Email</th>
-				<th>Mobile</th>
-				<th>City</th>
-				<th>Action</th>
-			</tr>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Mobile</th>
+					<th>City</th>
+					<th>Action</th>
+				</tr>
 			</thead>
-			
-			<%ResultSet result = (ResultSet) request.getAttribute("user_info");
-			while (result.next()) {%>
-			<tr>
-				<td><%=result.getString(1)%></td>
-				<td><%=result.getString(2)%></td>
-				<td><%=result.getString(3)%></td>
-				<td><%=result.getString(4)%></td>
-				<td>
-					<a class="pr-2 text-danger" href="delete?email=<%=result.getString(2)%>"><i class="fa fa-trash" aria-hidden="true"></i></a>
-					<a class="pl-2 text-primary" href="update?email=<%=result.getString(2)%>&mobile=<%=result.getString(3)%>"><i class="fa fa-edit" aria-hidden="true"></i></a>
-				</td>
+			<c:forEach var="result" items="${allRegistration}">	
+
+				<tr>
+					<td>${result.name}</td>
+					<td>${result.email}</td>
+					<td>${result.phone}</td>
+					<td>${result.city}</td>
+				</tr>
 				
-			</tr>
+			</c:forEach>
 	
-			<%}%>
 		</table>
 	</div>
-	<footer>
-		<!-- <p>Created By Lucifer</p> -->
-	</footer>
+
 
 	<!-- Jquery CDN -->
 	<script
@@ -70,7 +58,8 @@
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-		crossorigin="anonymous">		
+		crossorigin="anonymous">
+		
 	</script>
 </body>
 </html>
