@@ -1,0 +1,14 @@
+#JDK Development Kit 17.0.9
+
+# Download Link For Windows:
+    - https://www.oracle.com/java/technologies/downloads/#jdk17-windows
+    
+    - JDK 17 > Go to 'Windows' tab > download "x64 MSI Installer" (152.30 MB)
+
+    - Now simply install the "x64 MSI Installer"
+
+    - After installing > open CMD > type "java --version" 
+
+    - If we get 'java version 17.0.9' as output then it means your setup is complete.
+
+-----------------------------------------------------------------------------------------

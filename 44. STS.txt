@@ -2,7 +2,7 @@
 
 ---------------------------------------------------------------------------------------------
 # Spring Boot(4.8.1) Download:
-    URL: https://www.oracle.com/java/technologies/downloads/#jdk17-windows
+    URL: https://github.com/spring-projects/sts4/wiki/Previous-Versions
 
 
 ---------------------------------------------------------------------------------------------
