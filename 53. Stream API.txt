@@ -1,0 +1,40 @@
+# Functional Interface?
+    --> It is an interface that contains only one abstract method(100% incomplete methods).
+
+
+-------------------------------------------------------------------------------------------------
+# Types of Functional Interface?
+    --> Consumer<T>:
+        -> Represents an operation that takes a single input argument of type T and returns no result.
+        -> Example: Consumer<String> printer = (s) -> System.out.println(s);
+
+    --> Supplier<T>:
+        -> Represents a supplier of results, producing a result of type T.
+        -> Example: Supplier<Integer> randomNumber = () -> Math.random();
+
+    --> Predicate<T>:
+        -> Represents a predicate (boolean-valued function) of one argument.
+        -> Example: Predicate<String> isNotEmpty = (s) -> !s.isEmpty();
+
+    --> Function<T, R>:
+        -> Represents a function that takes one argument of type T and produces a result of type R.
+        -> Example: Function<Integer, String> intToString = (i) -> Integer.toString(i);
+
+    --> UnaryOperator<T>:
+        -> Represents an operation on a single operand that produces a result of the same type as its operand.
+        -> Example: UnaryOperator<Integer> square = (x) -> x * x;
+
+    --> BinaryOperator<T>:
+        -> Represents an operation upon two operands of the same type, producing a result of the same type as the operands.
+        -> Example: BinaryOperator<Integer> sum = (a, b) -> a + b;
+
+    --> Runnable:
+        -> Represents a task that takes no input and returns no result.
+        -> Example: Runnable task = () -> System.out.println("Executing task");
+
+    --> Callable<V>:
+        -> Represents a task that returns a result and may throw an exception.
+        -> Example: Callable<String> callableTask = () -> "Result of the callable task";
+
+
+-------------------------------------------------------------------------------------------------

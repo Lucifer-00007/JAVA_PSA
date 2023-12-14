@@ -1,12 +1,14 @@
 package com.example.blogger.service.impl;
 
 import com.example.blogger.entity.Post;
+import com.example.blogger.exception.ResourceNotFound;
 import com.example.blogger.payload.PostDto;
 import com.example.blogger.repository.PostRepository;
 import com.example.blogger.service.PostService;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class PostServiceImpl implements PostService {
@@ -38,6 +40,17 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public void deletePost(long id) {
+        //Optional<Post> byId = postRepo.findById(id);
+        //if(byId.isPresent()) {
+            //postRepo.deleteById(id);
+        //}else {
+            //throw new ResourceNotFound("Post not found with id: "+id);
+        //}
+
+        Post post= postRepo.findById(id).orElseThrow(
+                ()-> new ResourceNotFound("Post not found with id: "+id)
+        );
+
         postRepo.deleteById(id);
     }
 }
