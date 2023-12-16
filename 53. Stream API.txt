@@ -38,3 +38,129 @@
 
 
 -------------------------------------------------------------------------------------------------
+-->Example(Stream API):
+    --> EX1:
+        package com.example.blogger;
+
+        import java.util.Arrays;
+        import java.util.List;
+        import java.util.function.Predicate;
+        import java.util.stream.Collectors;
+
+        public class MainUtil {
+            public static void main(String[] args) {
+                //Predicate<Integer> condition = y->y>0;
+                //boolean val = condition.test(100);
+                //System.out.println(val);
+
+                List<Integer> data = Arrays.asList(10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+                List<Integer> newData = data.stream().filter(x -> x>20).collect(Collectors.toList());
+                System.out.println(newData); //[30, 40, 50, 60, 70, 80, 90, 100]
+            }
+
+        }
+
+
+
+    --> EX2 (Filter list of names starting with letter "M"):
+            List<String> data = Arrays.asList("Mike", "Stallin", "Mithun", "Adam", "Sumit", "Micheal");
+            List<String> newData = data.stream().filter(x -> x.startsWith("M")).collect(Collectors.toList());
+            System.out.println(newData); //["Mike", "Mithun", "Micheal"]
+
+
+
+    --> EX3 (Filter list of names ends with letter "n"):
+            List<String> data = Arrays.asList("Mike", "Stallin", "Mithun", "Adam", "Sumit", "Micheal");
+            List<String> newData = data.stream().filter(x -> x.startsWith("n")).collect(Collectors.toList());
+            System.out.println(newData); //["Stallin", "Mithun"]
+
+
+
+    --> EX4 (Give the number of times the name "Mike" is present):
+            List<String> data = Arrays.asList("Mike", "Stallin", "Mithun", "Adam", "Sumit", "Micheal");
+            List<String> newData = data.stream().filter(x -> x.equals("Mike")).collect(Collectors.toList());
+            System.out.println(newData.size()); //1
+
+
+
+    --> EX5 (Function Functional Interface):
+            package com.example.blogger;
+
+            import java.util.function.Function;
+            
+            public class A {
+                public static void main(String[] args) {
+                    Function<Integer, String> myFunction = i -> "Result: " +i; //Function Functional Interface
+                    String val = myFunction.apply(100);
+                    System.out.println(val); //Result: 100
+                }
+            }
+
+
+
+    --> EX6 ('.map()'):
+            List<Integer> data = Arrays.asList(10, 5, 2, 20);
+            List<Integer> newData = data.stream().map(n->n*n).collect(Collectors.toList());
+            System.out.println(newData); //[100, 25, 4, 400]
+
+
+
+    --> EX7 ('.sorted()'):
+            List<Integer> data = Arrays.asList(10, 5, 2, 20);
+            List<Integer> newData = data.stream().sorted().collect(Collectors.toList());
+            System.out.println(newData); //[2, 5, 10, 20]
+
+
+
+    --> EX8 (Remove Duplicate):
+            List<Integer> data = Arrays.asList(10, 5, 2, 20, 5, 8, 2, 10);
+            List<Integer> newData = data.stream().distinct().collect(Collectors.toList());
+            System.out.println(newData); //[2, 5, 10, 20]
+
+
+
+    --> EX9 (Supplier(Functional Interface)):
+            //Type1:
+            Supplier<A> mySupplier = () -> new A();
+            A s = mySupplier.get();
+            System.out.println(s);  //com.example.blogger.A@579bb367
+
+
+
+    --> EX10 (Consumer(Functional Interface)):
+            Consumer<String> myConsumer= s -> System.out.println("Consumed: "+s);
+            myConsumer.accept("Hello"); //Consumed: Hello
+
+
+
+    --> EX10 (max, min integer):
+            List<Integer> numbers = Arrays.asList(100, 500, 7, 400, 500, 10000); 
+            
+            List<Integer> maxVal = number.stream().max(Integer::compareTo).get();
+            List<Integer> minVal = number.stream().min(Integer::compareTo).get();
+            
+            System.out.println(maxVal); //10000
+            System.out.println(minVal); //7
+
+
+
+-------------------------------------------------------------------------------------------------
+#Coping 'Entity Object' to 'DTO Object':
+    - Comparator vs Comparable
+
+
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
