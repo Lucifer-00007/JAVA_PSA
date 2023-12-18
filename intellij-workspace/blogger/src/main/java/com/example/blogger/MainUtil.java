@@ -1,8 +1,8 @@
 package com.example.blogger;
 
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class MainUtil {
     public static void main(String[] args) {
@@ -119,25 +119,45 @@ public class MainUtil {
 
 
         //Comparator
-        MovieComparable m1= new MovieComparable("aaa", 8, 1999);
-        MovieComparable m2= new MovieComparable("ccc", 6, 1988);
-        MovieComparable m3= new MovieComparable("eee", 5, 2008);
-        MovieComparable m4= new MovieComparable("bbb", 9, 2003);
+//        MovieComparable m1= new MovieComparable("aaa", 8, 1999);
+//        MovieComparable m2= new MovieComparable("ccc", 6, 1988);
+//        MovieComparable m3= new MovieComparable("eee", 5, 2008);
+//        MovieComparable m4= new MovieComparable("bbb", 9, 2003);
+//
+//        ArrayList<MovieComparable> list= new ArrayList<MovieComparable>();
+//        list.add(m1);
+//        list.add(m2);
+//        list.add(m3);
+//        list.add(m4);
+//
+//        MovieComparator movieComparator = new MovieComparator();
+//        Collections.sort(list, movieComparator);
+//
+//        for(MovieComparable m:list ){
+//            System.out.println(m.getName());
+//            System.out.println(m.getYear());
+//            System.out.println(m.getRating());
+//        }
 
-        ArrayList<MovieComparable> list= new ArrayList<MovieComparable>();
-        list.add(m1);
-        list.add(m2);
-        list.add(m3);
-        list.add(m4);
 
-        MovieComparator movieComparator = new MovieComparator();
-        Collections.sort(list, movieComparator);
+//    List<Employee1> data = Arrays.asList(
+//         new Employee1("mike", 5000),
+//         new Employee1("Tom", 4000)
+//    );
+//    Map<Double, List<Employee1>> groups = data.stream().collect(Collectors.groupingBy(Employee1::getSalary));
+//    System.out.println(groups); //{5000.0=[com.example.blogger.Employee1@46fbb2c1], 4000.0=[com.example.blogger.Employee1@1698c449]}
+//
+//
+//     for(Map.Entry<Double, List<Employee1>> entry : groups.entrySet()){
+//         double salary = entry.getKey();
+//         List<Employee1> employlist = entry.getValue();
+//         System.out.println("Employee with salary " + salary + ":");
+//
+//         for (Employee1 employee1: employlist){
+//             System.out.println("\t" + employee1.getName()); //Employee with salary 5000.0: mike  Employee with salary 4000.0:Tom
+//         }
+//     }
 
-        for(MovieComparable m:list ){
-            System.out.println(m.getName());
-            System.out.println(m.getYear());
-            System.out.println(m.getRating());
-        }
     }
 
 //    static PostDto mapToDto(Post post){

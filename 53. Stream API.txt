@@ -39,7 +39,7 @@
 
 -------------------------------------------------------------------------------------------------
 -->Example(Stream API):
-    --> EX1:
+    --> EX1 (Filter numbers greater than 20):
         package com.example.blogger;
 
         import java.util.Arrays;
@@ -57,7 +57,6 @@
                 List<Integer> newData = data.stream().filter(x -> x>20).collect(Collectors.toList());
                 System.out.println(newData); //[30, 40, 50, 60, 70, 80, 90, 100]
             }
-
         }
 
 
@@ -142,6 +141,25 @@
             System.out.println(maxVal); //10000
             System.out.println(minVal); //7
 
+
+    --> EX11 (Group by salary):
+        List<Employee1> data = Arrays.asList(
+                new Employee1("mike", 5000),
+                new Employee1("Tom", 4000)
+        );
+
+        Map<Double, List<Employee1>> groups = data.stream().collect(Collectors.groupingBy(Employee1::getSalary));
+        System.out.println(groups); //{5000.0=[com.example.blogger.Employee1@46fbb2c1], 4000.0=[com.example.blogger.Employee1@1698c449]}
+            
+        for(Map.Entry<Double, List<Employee1>> entry : groups.entrySet()){
+            double salary = entry.getKey();
+            List<Employee1> employlist = entry.getValue();
+            System.out.println("Employee with salary " + salary + ":");
+
+            for (Employee1 employee1: employlist){
+                System.out.println("\t" + employee1.getName()); //Employee with salary 5000.0: mike  Employee with salary 4000.0:Tom
+            }
+        }
 
 
 -------------------------------------------------------------------------------------------------

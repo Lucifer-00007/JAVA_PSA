@@ -5,10 +5,15 @@ import com.example.blogger.exception.ResourceNotFound;
 import com.example.blogger.payload.PostDto;
 import com.example.blogger.repository.PostRepository;
 import com.example.blogger.service.PostService;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class PostServiceImpl implements PostService {
@@ -52,5 +57,33 @@ public class PostServiceImpl implements PostService {
         );
 
         postRepo.deleteById(id);
+    }
+
+//    @Override
+//    public List<PostDto> getAllPosts() {
+//        List<Post> posts = postRepo.findAll();
+//        List<PostDto> dtos = posts.stream().map(p -> mapToDto(p)).collect(Collectors.toList());
+//        return dtos;
+//    }
+
+    @Override
+    public List<PostDto> getAllPost(int pageNo, int pageSize, String sortBy, String sortOrder) {
+        Sort sort = (sortOrder.equalsIgnoreCase("asc")) ? Sort.by(sortOrder).ascending() : Sort.by(sortOrder).descending();
+        //Pageable pageable = PageRequest.of(pageNo, pageSize, Sort.by(sortBy), sort);
+        Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
+        Page<Post> pagePosts = postRepo.findAll(pageable);
+        List<Post> postContent = pagePosts.getContent();
+        List<PostDto> dtos = postContent.stream().map(p -> mapToDto(p)).collect(Collectors.toList());
+        return dtos;
+    }
+
+    PostDto mapToDto(Post post){
+        PostDto dto = new PostDto();
+        dto.setId(post.getId());
+        dto.setTitle(post.getTitle());
+        dto.setDescription(post.getDescription());
+        dto.setContent(post.getContent());
+
+        return dto;
     }
 }
