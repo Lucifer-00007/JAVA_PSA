@@ -232,6 +232,7 @@
 - [./intellij-workspace/blogger/src/main/java/com/example/blogger/A.java](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/intellij-workspace/blogger/src/main/java/com/example/blogger/A.java)
 - [./intellij-workspace/blogger/src/main/java/com/example/blogger/BloggerApplication.java](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/intellij-workspace/blogger/src/main/java/com/example/blogger/BloggerApplication.java)
 - [./intellij-workspace/blogger/src/main/java/com/example/blogger/Employee.java](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/intellij-workspace/blogger/src/main/java/com/example/blogger/Employee.java)
+- [./intellij-workspace/blogger/src/main/java/com/example/blogger/Employee1.java](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/intellij-workspace/blogger/src/main/java/com/example/blogger/Employee1.java)
 - [./intellij-workspace/blogger/src/main/java/com/example/blogger/MainUtil.java](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/intellij-workspace/blogger/src/main/java/com/example/blogger/MainUtil.java)
 - [./intellij-workspace/blogger/src/main/java/com/example/blogger/MovieComparable.java](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/intellij-workspace/blogger/src/main/java/com/example/blogger/MovieComparable.java)
 - [./intellij-workspace/blogger/src/main/java/com/example/blogger/MovieComparator.java](https://github.com/Lucifer-00007/JAVA_PSA/blob/main/intellij-workspace/blogger/src/main/java/com/example/blogger/MovieComparator.java)
