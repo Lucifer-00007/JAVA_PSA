@@ -68,13 +68,29 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<PostDto> getAllPost(int pageNo, int pageSize, String sortBy, String sortOrder) {
-        Sort sort = (sortOrder.equalsIgnoreCase("asc")) ? Sort.by(sortOrder).ascending() : Sort.by(sortOrder).descending();
+        Sort sort = (sortOrder.equalsIgnoreCase("asc")) ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
         //Pageable pageable = PageRequest.of(pageNo, pageSize, Sort.by(sortBy), sort);
         Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
         Page<Post> pagePosts = postRepo.findAll(pageable);
         List<Post> postContent = pagePosts.getContent();
         List<PostDto> dtos = postContent.stream().map(p -> mapToDto(p)).collect(Collectors.toList());
         return dtos;
+    }
+
+    @Override
+    public PostDto updatePost(long postId, PostDto postDto) {
+        Post post = postRepo.findById(postId).orElseThrow(
+                () -> new ResourceNotFound("Post Not Found With id: " + postId)
+        );
+
+        post.setTitle(postDto.getTitle());
+        post.setContent(postDto.getContent());
+        post.setDescription(postDto.getDescription());
+        //post.setId(postDto.getId());
+
+        Post savedPost = postRepo.save(post);
+        PostDto dto = mapToDto(savedPost);
+        return dto;
     }
 
     PostDto mapToDto(Post post){

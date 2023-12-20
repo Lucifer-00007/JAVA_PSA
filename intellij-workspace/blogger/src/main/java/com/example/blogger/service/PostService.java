@@ -13,4 +13,6 @@ public interface PostService {
 //    List<PostDto> getAllPosts();
 
     List<PostDto> getAllPost(int pageNo, int pageSize, String sortBy, String sortOrder);
+
+    PostDto updatePost(long postId, PostDto postDto);
 }
