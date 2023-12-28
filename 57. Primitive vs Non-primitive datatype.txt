@@ -1,0 +1,24 @@
+#Primitive DataType:
+    - The datatype that has a specificized size.
+        - eg: byte(1 byte), short(2 bytes), int(4 bytes), long(8 bytes), float(4 bytes), double(8 bytes), boolean() and char(2 bytes)
+    - Primitive DataType are predefined.
+
+
+
+-----------------------------------------------------------------------------------
+#Non-Primitive DataType:
+    - Non-Primitive DataType are predefined.
+    - They are created by the programmer.
+    - All Non-Primitive datatype have same size, depending on the size of the object.
+
+
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+
+
+
+
+
+
+

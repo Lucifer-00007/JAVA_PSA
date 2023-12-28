@@ -23,4 +23,6 @@
 
 - Diff bw primitive and non-primitive data types.
 
+- Diff bw "@AutoWired" and "Constructor Based Injection".
+
 

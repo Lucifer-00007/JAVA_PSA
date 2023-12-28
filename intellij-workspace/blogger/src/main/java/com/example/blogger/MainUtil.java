@@ -158,7 +158,13 @@ public class MainUtil {
 //         }
 //     }
 
+
+        new MainUtil().test();
     }
+
+
+
+
 
 //    static PostDto mapToDto(Post post){
 //        PostDto dto = new PostDto();
@@ -168,5 +174,12 @@ public class MainUtil {
 //
 //        return dto;
 //    }
+
+
+
+
+    public void test(){
+        System.out.println(100);
+    }
 
 }

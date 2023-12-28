@@ -3,6 +3,9 @@ package com.example.blogger.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name="posts")
 @Data
@@ -15,6 +18,11 @@ public class Post {
     private String title;
     private String description;
     private String content;
+
+
+    @OneToMany(mappedBy ="post", cascade = CascadeType.ALL, orphanRemoval = true) //if we parent class "post" then the child class "comment" will be auto destroyed(Composition relation).
+    private List<Comment> comments = new ArrayList<>();
+
 
     public long getId() {
         return id;

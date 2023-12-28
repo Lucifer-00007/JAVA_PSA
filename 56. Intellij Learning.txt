@@ -1,0 +1,33 @@
+-> Write "sout" and press tab to write "System.out.println();"
+
+-> Ctrl + D --> Duplicate a line.
+
+-> Ctrl + Shift + Up/Down arrow key --> move line up/down.
+
+->
+
+->
+
+->
+
+->
+
+->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
